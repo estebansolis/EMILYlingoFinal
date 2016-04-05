@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TPCircularBuffer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4547FD42E303C73D12CCC45748CC491D</key>
+		<key>5C6251666357A3BBE56B5CB31FD28DAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B2B758E5A2FBC4951EB61B6FB6CE421</key>
+		<key>630A3F469E1A8B405B5870DD8091D195</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDD7C94636CEC89682220CBBC5EC5332</key>
+		<key>B28F04A0016B2EDEDB732159E17425E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B998D1794C76C66865824BD5511C74FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F75F5C965E52936CBB7C68F36846C635</key>
 		<dict>
 			<key>primary</key>
 			<true/>

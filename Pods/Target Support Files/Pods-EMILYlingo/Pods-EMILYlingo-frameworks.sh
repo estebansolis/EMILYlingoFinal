@@ -82,3 +82,16 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-EMILYlingo/EZAudio.framework"
+  install_framework "Pods-EMILYlingo/Realm.framework"
+  install_framework "Pods-EMILYlingo/RealmSwift.framework"
+  install_framework "Pods-EMILYlingo/TPCircularBuffer.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-EMILYlingo/EZAudio.framework"
+  install_framework "Pods-EMILYlingo/Realm.framework"
+  install_framework "Pods-EMILYlingo/RealmSwift.framework"
+  install_framework "Pods-EMILYlingo/TPCircularBuffer.framework"
+fi
