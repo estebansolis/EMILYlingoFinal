@@ -87,7 +87,7 @@
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NpW-VU-Ozf"/>
-                                            <segue destination="RuD-Dq-jfI" kind="push" id="m6i-NC-ybm"/>
+                                            <segue destination="RuD-Dq-jfI" kind="push" identifier="segueIdentifer" id="m6i-NC-ybm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-rd-1Sp">
@@ -142,7 +142,7 @@
                     <navigationItem key="navigationItem" id="vE6-3o-B5y">
                         <barButtonItem key="leftBarButtonItem" title="-" id="2BB-tc-3b1">
                             <connections>
-                                <segue destination="RuD-Dq-jfI" kind="push" id="WkT-DM-h9o"/>
+                                <segue destination="RuD-Dq-jfI" kind="push" identifier="hamIdentifer" id="WkT-DM-h9o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -151,6 +151,9 @@
                         <outlet property="TimerLabel" destination="oxC-l4-wh1" id="CD7-gq-9NF"/>
                         <outlet property="cancelButton" destination="BlJ-0u-Kll" id="Mg3-vH-nI9"/>
                         <outlet property="cancelPhraseButton" destination="WYr-rd-1Sp" id="5jV-tN-1gr"/>
+                        <outlet property="genderField" destination="J9a-2z-mgc" id="1aW-8e-9Qi"/>
+                        <outlet property="languageField" destination="ECP-rO-GnN" id="xsv-eY-mrr"/>
+                        <outlet property="nameField" destination="mzZ-Tn-gx4" id="1Qc-Mw-tCM"/>
                         <outlet property="saveButton" destination="n31-wG-kbN" id="dBy-3y-gML"/>
                         <outlet property="savePhraseButton" destination="Wsy-6R-Ukv" id="3TZ-ps-HSb"/>
                         <outlet property="saveView" destination="yca-UI-bRT" id="0AV-Yf-O0h"/>

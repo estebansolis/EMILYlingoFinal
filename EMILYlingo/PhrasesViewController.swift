@@ -12,21 +12,20 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var phrases = [Phrases]()
     @IBOutlet weak var tableView: UITableView!
+    var dictionary: [String:String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
 
-        var dictionary: [String:String] = [
-            "zero" : "zero"
-        ]
-        dictionary["phraseName"] = "Sit Down"
-        dictionary["language"] = "Arabic"
-        dictionary["time"] = "5"
-        dictionary["flag"] = "usflag"
-        dictionary["gender"] = "male"
-        phrases.append(Phrases(dictionary: dictionary)!)
+     
+//        dictionary["phraseName"] = "Sit Down"
+//        dictionary["language"] = "Arabic"
+//        dictionary["time"] = "5"
+//        dictionary["flag"] = "usflag"
+//        dictionary["gender"] = "male"
+//        phrases.append(Phrases(dictionary: dictionary)!)
         loadPhrases()
         // Do any additional setup after loading the view.
     }
@@ -37,20 +36,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func loadPhrases(){
-        var dictionary: [String:String] = [
-            "zero" : "zero"
-        ]
-        dictionary["phraseName"] = "Sit Down"
-        dictionary["language"] = "Arabic"
-        dictionary["time"] = "5"
-        dictionary["flag"] = "usflag"
-        dictionary["gender"] = "male"
-        
-        for _ in 1...20{
-            phrases.append(Phrases(dictionary: dictionary)!)
-        }
-        
-        
+        phrases.append(Phrases(dictionary: dictionary)!)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

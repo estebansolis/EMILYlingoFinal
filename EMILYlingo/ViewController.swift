@@ -14,7 +14,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     //------------------------------------------------------------------------------
     // MARK: Properties
     //------------------------------------------------------------------------------
-    
+    var phrases: Phrases!
     @IBOutlet weak var plot: EZAudioPlotGL?;
     var microphone: EZMicrophone!;
     @IBOutlet weak var RecordButton: UIButton!
@@ -25,7 +25,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     @IBOutlet weak var savePhraseButton: UIButton!
     @IBOutlet weak var cancelPhraseButton: UIButton!
     
+    @IBOutlet weak var languageField: UITextField!
+
+    @IBOutlet weak var nameField: UITextField!
     
+    @IBOutlet weak var genderField: UISegmentedControl!
+
     var audioURL: NSURL!
     var recordingSession: AVAudioSession!
     var audioPlayer: AVAudioPlayer?
@@ -36,7 +41,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     var check = false;
     var TimerControl = NSTimer()
     
-    
+    var dictionary: [String:String] = [
+        "zero" : "zero"
+    ]
     //------------------------------------------------------------------------------
     // MARK: Status Bar Style
     //------------------------------------------------------------------------------
@@ -174,6 +181,23 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
         TimerLabel.hidden = false 
     }
     @IBAction func saveButton(sender: AnyObject) {
+      
+        dictionary["phraseName"] = nameField.text
+        dictionary["language"] = languageField.text
+        dictionary["time"] = String(30 - timer)
+       
+        dictionary["flag"] = languageField.text
+        switch genderField.selectedSegmentIndex
+        {
+        case 0:
+            dictionary["gender"] = "male"
+        case 1:
+            dictionary["gender"] = "female"
+        default:
+            break;
+        }
+        let audioFileName = audioURL.absoluteString
+        dictionary["url"] = audioFileName
         
     }
     
@@ -193,6 +217,16 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
             timer = timer - 1
             TimerLabel.text = String(timer)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueIdentifer"{
+            if let destination = segue.destinationViewController as? PhrasesViewController {
+                destination.dictionary = dictionary
+            }
+        
+        }
+        
     }
     
     

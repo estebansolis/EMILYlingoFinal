@@ -14,6 +14,8 @@ class Phrases: NSObject {
     var time : String?
     var flag : String?
     var gender : String?
+    var url: String?
+    
     
     init?(dictionary: NSDictionary){
         let name = dictionary["phraseName"] as? String
@@ -48,6 +50,12 @@ class Phrases: NSObject {
             gender = sex
         }else {
             gender = "Male"
+        }
+        let link = dictionary["url"] as? String
+        if link != nil{
+            url = link
+        }else {
+            url = "/fkda/dfjiad"
         }
         
     }
