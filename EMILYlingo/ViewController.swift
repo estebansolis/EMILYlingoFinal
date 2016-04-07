@@ -31,7 +31,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophon
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var genderField: UISegmentedControl!
-
+    
+    let realm = try! Realm()
+    
     var audioURL: NSURL!
     var recordingSession: AVAudioSession!
     var audioPlayer: AVAudioPlayer?
@@ -244,8 +246,15 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophon
                 }
                 let audioFileName = audioURL.absoluteString
                 dictionary["url"] = audioFileName
-                destination.dictionary = dictionary
+                var phrase: Phrases!
+                phrase = Phrases(dictionary: dictionary)
+                destination.phrase = phrase
+                //destination.dictionary = dictionary
+                try! realm.write {
+                    realm.add(phrase)
+                }
             }
+           
         
         }
         

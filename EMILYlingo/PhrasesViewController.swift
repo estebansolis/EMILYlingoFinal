@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var phrases = [Phrases]()
     @IBOutlet weak var tableView: UITableView!
     var dictionary: [String:String]!
-    
+    var phrase: Phrases!
+    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -36,7 +38,10 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func loadPhrases(){
-        phrases.append(Phrases(dictionary: dictionary)!)
+        // query realm and add it to our phrase array to view 
+        let ph = realm.objects(Phrases)
+        
+        phrases = Array(ph)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Phrases: NSObject {
-    var phraseName : String?
-    var language : String?
-    var time : String?
-    var flag : String?
-    var gender : String?
-    var url: String?
+class Phrases: Object {
+    dynamic var phraseName : String?
+    dynamic var language : String?
+    dynamic var time : String?
+    dynamic var flag : String?
+    dynamic var gender : String?
+    dynamic var url: String?
     
     
-    init?(dictionary: NSDictionary){
+     convenience init(dictionary: NSDictionary){
+        self.init()
         let name = dictionary["phraseName"] as? String
         if name != nil {
             phraseName = name
@@ -57,14 +59,18 @@ class Phrases: NSObject {
         }else {
             url = "/fkda/dfjiad"
         }
-        
     }
     
-    class func phrases(array array: [NSDictionary]) -> [Phrases] {
+   /* required init() {
+        fatalError("init() has not been implemented")
+    }*/
+    
+    
+     class func phrases(array array: [NSDictionary]) -> [Phrases] {
         var phrases = [Phrases]()
         for dictionary in array {
             let phrase = Phrases(dictionary: dictionary)
-            phrases.append(phrase!)
+            phrases.append(phrase)
         }
         return phrases
     }
