@@ -1,1347 +1,664 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>101333F1ADA8B41DA1DFD9C3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-EMILYlingo.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1876B29EC9C27F86E3CF2BD2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_EMILYlingo.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3CDE89934A860855E4204E85</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3E2C8DC3BD8DCC9716A80654</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5F9EE9311CB3765600D1A925</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5F9EE9321CB376B000D1A925</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9321CB376B000D1A925</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PhrasesCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9331CB376B000D1A925</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5F9EE9321CB376B000D1A925</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5F9EE9341CB377E400D1A925</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB236F1CADD3DB00F59715</string>
-				<string>5F9EE9351CB3782F00D1A925</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Controllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9351CB3782F00D1A925</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PhrasesViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9361CB3782F00D1A925</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5F9EE9351CB3782F00D1A925</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5F9EE9371CB379EA00D1A925</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5F9EE9381CB37A8200D1A925</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9381CB37A8200D1A925</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Phrases.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5F9EE9391CB37A8200D1A925</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5F9EE9381CB37A8200D1A925</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23611CADD3DB00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB236C1CADD3DB00F59715</string>
-				<string>E6C2A2C01CB0933E00E3C142</string>
-				<string>5FBB23841CADD3DC00F59715</string>
-				<string>5FBB238F1CADD3DC00F59715</string>
-				<string>5FBB236B1CADD3DB00F59715</string>
-				<string>8940D00982B3776065DC4CA4</string>
-				<string>860A7D5A2E85D663E18F5841</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23621CADD3DB00F59715</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0720</string>
-				<key>LastUpgradeCheck</key>
-				<string>0720</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>EMILYlingo</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>5FBB23691CADD3DB00F59715</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2.1</string>
-						<key>DevelopmentTeam</key>
-						<string>2Y5276U3HZ</string>
-					</dict>
-					<key>5FBB23801CADD3DC00F59715</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2.1</string>
-						<key>DevelopmentTeam</key>
-						<string>2Y5276U3HZ</string>
-						<key>TestTargetID</key>
-						<string>5FBB23691CADD3DB00F59715</string>
-					</dict>
-					<key>5FBB238B1CADD3DC00F59715</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2.1</string>
-						<key>DevelopmentTeam</key>
-						<string>2Y5276U3HZ</string>
-						<key>TestTargetID</key>
-						<string>5FBB23691CADD3DB00F59715</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>5FBB23651CADD3DB00F59715</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5FBB23611CADD3DB00F59715</string>
-			<key>productRefGroup</key>
-			<string>5FBB236B1CADD3DB00F59715</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>5FBB23691CADD3DB00F59715</string>
-				<string>5FBB23801CADD3DC00F59715</string>
-				<string>5FBB238B1CADD3DC00F59715</string>
-			</array>
-		</dict>
-		<key>5FBB23651CADD3DB00F59715</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5FBB23931CADD3DC00F59715</string>
-				<string>5FBB23941CADD3DC00F59715</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5FBB23661CADD3DB00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5F9EE9391CB37A8200D1A925</string>
-				<string>5FBB23761CADD3DB00F59715</string>
-				<string>5FBB23701CADD3DB00F59715</string>
-				<string>5F9EE9361CB3782F00D1A925</string>
-				<string>5F9EE9331CB376B000D1A925</string>
-				<string>5FBB236E1CADD3DB00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB23671CADD3DB00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FD1489B717F4A769A962D10C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB23681CADD3DB00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E6C2A2C41CB0934900E3C142</string>
-				<string>E6C2A2C31CB0934900E3C142</string>
-				<string>5FBB237B1CADD3DC00F59715</string>
-				<string>5FBB23781CADD3DB00F59715</string>
-				<string>5FBB23731CADD3DB00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB23691CADD3DB00F59715</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5FBB23951CADD3DC00F59715</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3E2C8DC3BD8DCC9716A80654</string>
-				<string>5FBB23661CADD3DB00F59715</string>
-				<string>5FBB23671CADD3DB00F59715</string>
-				<string>5FBB23681CADD3DB00F59715</string>
-				<string>B00DCACF92A92977D0C3F871</string>
-				<string>3CDE89934A860855E4204E85</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EMILYlingo</string>
-			<key>productName</key>
-			<string>EMILYlingo</string>
-			<key>productReference</key>
-			<string>5FBB236A1CADD3DB00F59715</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>5FBB236A1CADD3DB00F59715</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EMILYlingo.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5FBB236B1CADD3DB00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB236A1CADD3DB00F59715</string>
-				<string>5FBB23811CADD3DC00F59715</string>
-				<string>5FBB238C1CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB236C1CADD3DB00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5F9EE9371CB379EA00D1A925</string>
-				<string>5F9EE9341CB377E400D1A925</string>
-				<string>5F9EE9311CB3765600D1A925</string>
-				<string>5FBB236D1CADD3DB00F59715</string>
-				<string>5FBB23711CADD3DB00F59715</string>
-				<string>5FBB23771CADD3DB00F59715</string>
-				<string>5FBB23791CADD3DC00F59715</string>
-				<string>5FBB237C1CADD3DC00F59715</string>
-				<string>5FBB23741CADD3DB00F59715</string>
-				<string>5FBB9A6A1CADDCA200673D84</string>
-				<string>E6C2A2C11CB0934900E3C142</string>
-				<string>E6C2A2C21CB0934900E3C142</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EMILYlingo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB236D1CADD3DB00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB236E1CADD3DB00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB236D1CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB236F1CADD3DB00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23701CADD3DB00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB236F1CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23711CADD3DB00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB23721CADD3DB00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23721CADD3DB00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23731CADD3DB00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23711CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23741CADD3DB00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB23751CADD3DB00F59715</string>
-			</array>
-			<key>currentVersion</key>
-			<string>5FBB23751CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>EMILYlingo.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>5FBB23751CADD3DB00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>EMILYlingo.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23761CADD3DB00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23741CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23771CADD3DB00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23781CADD3DB00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23771CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23791CADD3DC00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB237A1CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB237A1CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB237B1CADD3DC00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23791CADD3DC00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB237C1CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB237D1CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5FBB23861CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB237E1CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB237F1CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB23801CADD3DC00F59715</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5FBB23981CADD3DC00F59715</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5FBB237D1CADD3DC00F59715</string>
-				<string>5FBB237E1CADD3DC00F59715</string>
-				<string>5FBB237F1CADD3DC00F59715</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5FBB23831CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EMILYlingoTests</string>
-			<key>productName</key>
-			<string>EMILYlingoTests</string>
-			<key>productReference</key>
-			<string>5FBB23811CADD3DC00F59715</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>5FBB23811CADD3DC00F59715</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EMILYlingoTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5FBB23821CADD3DC00F59715</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>5FBB23621CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5FBB23691CADD3DB00F59715</string>
-			<key>remoteInfo</key>
-			<string>EMILYlingo</string>
-		</dict>
-		<key>5FBB23831CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>5FBB23691CADD3DB00F59715</string>
-			<key>targetProxy</key>
-			<string>5FBB23821CADD3DC00F59715</string>
-		</dict>
-		<key>5FBB23841CADD3DC00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB23851CADD3DC00F59715</string>
-				<string>5FBB23871CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EMILYlingoTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23851CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>EMILYlingoTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23861CADD3DC00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23851CADD3DC00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23871CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23881CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5FBB23911CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB23891CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB238A1CADD3DC00F59715</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5FBB238B1CADD3DC00F59715</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5FBB239B1CADD3DC00F59715</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5FBB23881CADD3DC00F59715</string>
-				<string>5FBB23891CADD3DC00F59715</string>
-				<string>5FBB238A1CADD3DC00F59715</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5FBB238E1CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EMILYlingoUITests</string>
-			<key>productName</key>
-			<string>EMILYlingoUITests</string>
-			<key>productReference</key>
-			<string>5FBB238C1CADD3DC00F59715</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>5FBB238C1CADD3DC00F59715</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EMILYlingoUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5FBB238D1CADD3DC00F59715</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>5FBB23621CADD3DB00F59715</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5FBB23691CADD3DB00F59715</string>
-			<key>remoteInfo</key>
-			<string>EMILYlingo</string>
-		</dict>
-		<key>5FBB238E1CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>5FBB23691CADD3DB00F59715</string>
-			<key>targetProxy</key>
-			<string>5FBB238D1CADD3DC00F59715</string>
-		</dict>
-		<key>5FBB238F1CADD3DC00F59715</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5FBB23901CADD3DC00F59715</string>
-				<string>5FBB23921CADD3DC00F59715</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EMILYlingoUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23901CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>EMILYlingoUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23911CADD3DC00F59715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FBB23901CADD3DC00F59715</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FBB23921CADD3DC00F59715</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FBB23931CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5FBB23941CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5FBB23951CADD3DC00F59715</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5FBB23961CADD3DC00F59715</string>
-				<string>5FBB23971CADD3DC00F59715</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5FBB23961CADD3DC00F59715</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>101333F1ADA8B41DA1DFD9C3</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingo/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingo</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_INSTALL_OBJC_HEADER</key>
-				<string>YES</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>./EMILYlingo/EMILYlingo-Bridging-Header.h</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5FBB23971CADD3DC00F59715</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AB3020E61C59B24E2A80E79E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingo/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingo</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_INSTALL_OBJC_HEADER</key>
-				<string>YES</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>./EMILYlingo/EMILYlingo-Bridging-Header.h</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5FBB23981CADD3DC00F59715</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5FBB23991CADD3DC00F59715</string>
-				<string>5FBB239A1CADD3DC00F59715</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5FBB23991CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/EMILYlingo.app/EMILYlingo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5FBB239A1CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/EMILYlingo.app/EMILYlingo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5FBB239B1CADD3DC00F59715</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5FBB239C1CADD3DC00F59715</string>
-				<string>5FBB239D1CADD3DC00F59715</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5FBB239C1CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>EMILYlingo</string>
-				<key>USES_XCTRUNNER</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5FBB239D1CADD3DC00F59715</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>EMILYlingoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.EMILYlingo.EMILYlingoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>EMILYlingo</string>
-				<key>USES_XCTRUNNER</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5FBB9A6A1CADDCA200673D84</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EMILYlingo-Bridging-Header.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>860A7D5A2E85D663E18F5841</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1876B29EC9C27F86E3CF2BD2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8940D00982B3776065DC4CA4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>101333F1ADA8B41DA1DFD9C3</string>
-				<string>AB3020E61C59B24E2A80E79E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AB3020E61C59B24E2A80E79E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-EMILYlingo.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B00DCACF92A92977D0C3F871</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E6C2A2C01CB0933E00E3C142</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Assets</string>
-			<key>path</key>
-			<string>EMILYlingo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E6C2A2C11CB0934900E3C142</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>RecordingOn.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E6C2A2C21CB0934900E3C142</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>RecordOff.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E6C2A2C31CB0934900E3C142</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E6C2A2C11CB0934900E3C142</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E6C2A2C41CB0934900E3C142</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E6C2A2C21CB0934900E3C142</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FD1489B717F4A769A962D10C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1876B29EC9C27F86E3CF2BD2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>5FBB23621CADD3DB00F59715</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F9EE9331CB376B000D1A925 /* PhrasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE9321CB376B000D1A925 /* PhrasesCell.swift */; };
+		5F9EE9361CB3782F00D1A925 /* PhrasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE9351CB3782F00D1A925 /* PhrasesViewController.swift */; };
+		5F9EE9391CB37A8200D1A925 /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE9381CB37A8200D1A925 /* Phrases.swift */; };
+		5FBB236E1CADD3DB00F59715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB236D1CADD3DB00F59715 /* AppDelegate.swift */; };
+		5FBB23701CADD3DB00F59715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB236F1CADD3DB00F59715 /* ViewController.swift */; };
+		5FBB23761CADD3DB00F59715 /* EMILYlingo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23741CADD3DB00F59715 /* EMILYlingo.xcdatamodeld */; };
+		5FBB23781CADD3DB00F59715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBB23771CADD3DB00F59715 /* Assets.xcassets */; };
+		5FBB237B1CADD3DC00F59715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBB23791CADD3DC00F59715 /* LaunchScreen.storyboard */; };
+		5FBB23861CADD3DC00F59715 /* EMILYlingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23851CADD3DC00F59715 /* EMILYlingoTests.swift */; };
+		5FBB23911CADD3DC00F59715 /* EMILYlingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */; };
+		E6C2A2C31CB0934900E3C142 /* RecordingOn.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C2A2C11CB0934900E3C142 /* RecordingOn.png */; };
+		E6C2A2C41CB0934900E3C142 /* RecordOff.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C2A2C21CB0934900E3C142 /* RecordOff.png */; };
+		EEF8E0011CB6FA3C0091317B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF8DFFF1CB6FA3C0091317B /* Main.storyboard */; };
+		FD1489B717F4A769A962D10C /* Pods_EMILYlingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1876B29EC9C27F86E3CF2BD2 /* Pods_EMILYlingo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FBB23821CADD3DC00F59715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FBB23621CADD3DB00F59715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FBB23691CADD3DB00F59715;
+			remoteInfo = EMILYlingo;
+		};
+		5FBB238D1CADD3DC00F59715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FBB23621CADD3DB00F59715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FBB23691CADD3DB00F59715;
+			remoteInfo = EMILYlingo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		101333F1ADA8B41DA1DFD9C3 /* Pods-EMILYlingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMILYlingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.debug.xcconfig"; sourceTree = "<group>"; };
+		1876B29EC9C27F86E3CF2BD2 /* Pods_EMILYlingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMILYlingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9EE9321CB376B000D1A925 /* PhrasesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhrasesCell.swift; sourceTree = "<group>"; };
+		5F9EE9351CB3782F00D1A925 /* PhrasesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhrasesViewController.swift; sourceTree = "<group>"; };
+		5F9EE9381CB37A8200D1A925 /* Phrases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
+		5FBB236A1CADD3DB00F59715 /* EMILYlingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMILYlingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FBB236D1CADD3DB00F59715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5FBB236F1CADD3DB00F59715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5FBB23751CADD3DB00F59715 /* EMILYlingo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMILYlingo.xcdatamodel; sourceTree = "<group>"; };
+		5FBB23771CADD3DB00F59715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5FBB237A1CADD3DC00F59715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FBB237C1CADD3DC00F59715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FBB23811CADD3DC00F59715 /* EMILYlingoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMILYlingoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FBB23851CADD3DC00F59715 /* EMILYlingoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMILYlingoTests.swift; sourceTree = "<group>"; };
+		5FBB23871CADD3DC00F59715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FBB238C1CADD3DC00F59715 /* EMILYlingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMILYlingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMILYlingoUITests.swift; sourceTree = "<group>"; };
+		5FBB23921CADD3DC00F59715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FBB9A6A1CADDCA200673D84 /* EMILYlingo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMILYlingo-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB3020E61C59B24E2A80E79E /* Pods-EMILYlingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMILYlingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.release.xcconfig"; sourceTree = "<group>"; };
+		E6C2A2C11CB0934900E3C142 /* RecordingOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordingOn.png; sourceTree = "<group>"; };
+		E6C2A2C21CB0934900E3C142 /* RecordOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordOff.png; sourceTree = "<group>"; };
+		EEF8E0001CB6FA3C0091317B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FBB23671CADD3DB00F59715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1489B717F4A769A962D10C /* Pods_EMILYlingo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB237E1CADD3DC00F59715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB23891CADD3DC00F59715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F9EE9311CB3765600D1A925 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EEF8DFFF1CB6FA3C0091317B /* Main.storyboard */,
+				5FBB23791CADD3DC00F59715 /* LaunchScreen.storyboard */,
+				5F9EE9321CB376B000D1A925 /* PhrasesCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5F9EE9341CB377E400D1A925 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FBB236F1CADD3DB00F59715 /* ViewController.swift */,
+				5F9EE9351CB3782F00D1A925 /* PhrasesViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5F9EE9371CB379EA00D1A925 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EE9381CB37A8200D1A925 /* Phrases.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5FBB23611CADD3DB00F59715 = {
+			isa = PBXGroup;
+			children = (
+				5FBB236C1CADD3DB00F59715 /* EMILYlingo */,
+				E6C2A2C01CB0933E00E3C142 /* Assets */,
+				5FBB23841CADD3DC00F59715 /* EMILYlingoTests */,
+				5FBB238F1CADD3DC00F59715 /* EMILYlingoUITests */,
+				5FBB236B1CADD3DB00F59715 /* Products */,
+				8940D00982B3776065DC4CA4 /* Pods */,
+				860A7D5A2E85D663E18F5841 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5FBB236B1CADD3DB00F59715 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FBB236A1CADD3DB00F59715 /* EMILYlingo.app */,
+				5FBB23811CADD3DC00F59715 /* EMILYlingoTests.xctest */,
+				5FBB238C1CADD3DC00F59715 /* EMILYlingoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FBB236C1CADD3DB00F59715 /* EMILYlingo */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EE9371CB379EA00D1A925 /* Model */,
+				5F9EE9341CB377E400D1A925 /* Controllers */,
+				5F9EE9311CB3765600D1A925 /* Views */,
+				5FBB236D1CADD3DB00F59715 /* AppDelegate.swift */,
+				5FBB23771CADD3DB00F59715 /* Assets.xcassets */,
+				5FBB237C1CADD3DC00F59715 /* Info.plist */,
+				5FBB23741CADD3DB00F59715 /* EMILYlingo.xcdatamodeld */,
+				5FBB9A6A1CADDCA200673D84 /* EMILYlingo-Bridging-Header.h */,
+				E6C2A2C11CB0934900E3C142 /* RecordingOn.png */,
+				E6C2A2C21CB0934900E3C142 /* RecordOff.png */,
+			);
+			path = EMILYlingo;
+			sourceTree = "<group>";
+		};
+		5FBB23841CADD3DC00F59715 /* EMILYlingoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FBB23851CADD3DC00F59715 /* EMILYlingoTests.swift */,
+				5FBB23871CADD3DC00F59715 /* Info.plist */,
+			);
+			path = EMILYlingoTests;
+			sourceTree = "<group>";
+		};
+		5FBB238F1CADD3DC00F59715 /* EMILYlingoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */,
+				5FBB23921CADD3DC00F59715 /* Info.plist */,
+			);
+			path = EMILYlingoUITests;
+			sourceTree = "<group>";
+		};
+		860A7D5A2E85D663E18F5841 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1876B29EC9C27F86E3CF2BD2 /* Pods_EMILYlingo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8940D00982B3776065DC4CA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				101333F1ADA8B41DA1DFD9C3 /* Pods-EMILYlingo.debug.xcconfig */,
+				AB3020E61C59B24E2A80E79E /* Pods-EMILYlingo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6C2A2C01CB0933E00E3C142 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			path = EMILYlingo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FBB23691CADD3DB00F59715 /* EMILYlingo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FBB23951CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingo" */;
+			buildPhases = (
+				3E2C8DC3BD8DCC9716A80654 /* Check Pods Manifest.lock */,
+				5FBB23661CADD3DB00F59715 /* Sources */,
+				5FBB23671CADD3DB00F59715 /* Frameworks */,
+				5FBB23681CADD3DB00F59715 /* Resources */,
+				B00DCACF92A92977D0C3F871 /* Embed Pods Frameworks */,
+				3CDE89934A860855E4204E85 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMILYlingo;
+			productName = EMILYlingo;
+			productReference = 5FBB236A1CADD3DB00F59715 /* EMILYlingo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FBB23801CADD3DC00F59715 /* EMILYlingoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FBB23981CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingoTests" */;
+			buildPhases = (
+				5FBB237D1CADD3DC00F59715 /* Sources */,
+				5FBB237E1CADD3DC00F59715 /* Frameworks */,
+				5FBB237F1CADD3DC00F59715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FBB23831CADD3DC00F59715 /* PBXTargetDependency */,
+			);
+			name = EMILYlingoTests;
+			productName = EMILYlingoTests;
+			productReference = 5FBB23811CADD3DC00F59715 /* EMILYlingoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5FBB238B1CADD3DC00F59715 /* EMILYlingoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FBB239B1CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingoUITests" */;
+			buildPhases = (
+				5FBB23881CADD3DC00F59715 /* Sources */,
+				5FBB23891CADD3DC00F59715 /* Frameworks */,
+				5FBB238A1CADD3DC00F59715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FBB238E1CADD3DC00F59715 /* PBXTargetDependency */,
+			);
+			name = EMILYlingoUITests;
+			productName = EMILYlingoUITests;
+			productReference = 5FBB238C1CADD3DC00F59715 /* EMILYlingoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FBB23621CADD3DB00F59715 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = EMILYlingo;
+				TargetAttributes = {
+					5FBB23691CADD3DB00F59715 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2Y5276U3HZ;
+					};
+					5FBB23801CADD3DC00F59715 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2Y5276U3HZ;
+						TestTargetID = 5FBB23691CADD3DB00F59715;
+					};
+					5FBB238B1CADD3DC00F59715 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2Y5276U3HZ;
+						TestTargetID = 5FBB23691CADD3DB00F59715;
+					};
+				};
+			};
+			buildConfigurationList = 5FBB23651CADD3DB00F59715 /* Build configuration list for PBXProject "EMILYlingo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FBB23611CADD3DB00F59715;
+			productRefGroup = 5FBB236B1CADD3DB00F59715 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FBB23691CADD3DB00F59715 /* EMILYlingo */,
+				5FBB23801CADD3DC00F59715 /* EMILYlingoTests */,
+				5FBB238B1CADD3DC00F59715 /* EMILYlingoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FBB23681CADD3DB00F59715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C2A2C41CB0934900E3C142 /* RecordOff.png in Resources */,
+				EEF8E0011CB6FA3C0091317B /* Main.storyboard in Resources */,
+				E6C2A2C31CB0934900E3C142 /* RecordingOn.png in Resources */,
+				5FBB237B1CADD3DC00F59715 /* LaunchScreen.storyboard in Resources */,
+				5FBB23781CADD3DB00F59715 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB237F1CADD3DC00F59715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB238A1CADD3DC00F59715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CDE89934A860855E4204E85 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E2C8DC3BD8DCC9716A80654 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B00DCACF92A92977D0C3F871 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FBB23661CADD3DB00F59715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9EE9391CB37A8200D1A925 /* Phrases.swift in Sources */,
+				5FBB23761CADD3DB00F59715 /* EMILYlingo.xcdatamodeld in Sources */,
+				5FBB23701CADD3DB00F59715 /* ViewController.swift in Sources */,
+				5F9EE9361CB3782F00D1A925 /* PhrasesViewController.swift in Sources */,
+				5F9EE9331CB376B000D1A925 /* PhrasesCell.swift in Sources */,
+				5FBB236E1CADD3DB00F59715 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB237D1CADD3DC00F59715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FBB23861CADD3DC00F59715 /* EMILYlingoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FBB23881CADD3DC00F59715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FBB23911CADD3DC00F59715 /* EMILYlingoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FBB23831CADD3DC00F59715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FBB23691CADD3DB00F59715 /* EMILYlingo */;
+			targetProxy = 5FBB23821CADD3DC00F59715 /* PBXContainerItemProxy */;
+		};
+		5FBB238E1CADD3DC00F59715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FBB23691CADD3DB00F59715 /* EMILYlingo */;
+			targetProxy = 5FBB238D1CADD3DC00F59715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FBB23791CADD3DC00F59715 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FBB237A1CADD3DC00F59715 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EEF8DFFF1CB6FA3C0091317B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEF8E0001CB6FA3C0091317B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FBB23931CADD3DC00F59715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5FBB23941CADD3DC00F59715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FBB23961CADD3DC00F59715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 101333F1ADA8B41DA1DFD9C3 /* Pods-EMILYlingo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EMILYlingo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./EMILYlingo/EMILYlingo-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		5FBB23971CADD3DC00F59715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB3020E61C59B24E2A80E79E /* Pods-EMILYlingo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EMILYlingo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./EMILYlingo/EMILYlingo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		5FBB23991CADD3DC00F59715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EMILYlingoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EMILYlingo.app/EMILYlingo";
+			};
+			name = Debug;
+		};
+		5FBB239A1CADD3DC00F59715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EMILYlingoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EMILYlingo.app/EMILYlingo";
+			};
+			name = Release;
+		};
+		5FBB239C1CADD3DC00F59715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EMILYlingoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EMILYlingo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5FBB239D1CADD3DC00F59715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EMILYlingoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EMILYlingo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FBB23651CADD3DB00F59715 /* Build configuration list for PBXProject "EMILYlingo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FBB23931CADD3DC00F59715 /* Debug */,
+				5FBB23941CADD3DC00F59715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FBB23951CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FBB23961CADD3DC00F59715 /* Debug */,
+				5FBB23971CADD3DC00F59715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FBB23981CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FBB23991CADD3DC00F59715 /* Debug */,
+				5FBB239A1CADD3DC00F59715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FBB239B1CADD3DC00F59715 /* Build configuration list for PBXNativeTarget "EMILYlingoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FBB239C1CADD3DC00F59715 /* Debug */,
+				5FBB239D1CADD3DC00F59715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5FBB23741CADD3DB00F59715 /* EMILYlingo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FBB23751CADD3DB00F59715 /* EMILYlingo.xcdatamodel */,
+			);
+			currentVersion = 5FBB23751CADD3DB00F59715 /* EMILYlingo.xcdatamodel */;
+			path = EMILYlingo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5FBB23621CADD3DB00F59715 /* Project object */;
+}

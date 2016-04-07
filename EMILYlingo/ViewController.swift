@@ -8,15 +8,16 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDelegate {
+class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophoneDelegate {
     
     //------------------------------------------------------------------------------
     // MARK: Properties
     //------------------------------------------------------------------------------
     var phrases: Phrases!
-    @IBOutlet weak var plot: EZAudioPlotGL?;
-    var microphone: EZMicrophone!;
+    //@IBOutlet weak var plot: EZAudioPlotGL?;
+    //var microphone: EZMicrophone!;
     @IBOutlet weak var RecordButton: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
@@ -35,7 +36,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     var recordingSession: AVAudioSession!
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder!
-    
+    var tempTimer = 0
     var timer = 30
     var count = 2
     var check = false;
@@ -61,10 +62,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
         cancelButton.hidden = true
         saveButton.hidden = true
         saveView.hidden = true
-        microphone = EZMicrophone(delegate: self, startsImmediately: true);
-        plot?.backgroundColor = UIColor.blackColor()
-        let plotType: EZPlotType = EZPlotType.Buffer
-        plot?.plotType = plotType
+        //microphone = EZMicrophone(delegate: self, startsImmediately: true);
+        //plot?.backgroundColor = UIColor.blackColor()
+        //let plotType: EZPlotType = EZPlotType.Buffer
+        //plot?.plotType = plotType
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -90,9 +91,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
         if count == 1 {
             check = true
             if let image = UIImage(named: "RecordingOn.png") {
-                plot?.shouldFill = true
-                plot?.shouldMirror = true
+                //plot?.shouldFill = true
+                //plot?.shouldMirror = true
                 //plot?.resumeDrawing()
+                
                 TimerControl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
                 count = 2
                 RecordButton.setImage(image, forState: .Normal)
@@ -102,6 +104,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
             if let image = UIImage(named: "RecordOff.png") {
                 //plot?.pauseDrawing()
                 count = 1
+                tempTimer = timer
                 timer = 30
                 TimerLabel.text = String(timer)
                 TimerControl.invalidate()
@@ -131,9 +134,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
         }catch{
             
         }
-        plot?.shouldMirror = false
-        plot?.shouldFill = false
-        plot?.clear()
+        //plot?.shouldMirror = false
+        //plot?.shouldFill = false
+        //plot?.clear()
         
     }
     
@@ -154,10 +157,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
             audioRecorder = try AVAudioRecorder(URL: audioURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
-            let plotType: EZPlotType = EZPlotType.Buffer
-            plot?.plotType = plotType;
-            plot?.shouldFill = true
-            plot?.shouldMirror = true
+            //let plotType: EZPlotType = EZPlotType.Buffer
+            //plot?.plotType = plotType;
+           // plot?.shouldFill = true
+            //plot?.shouldMirror = true
             
         }catch {
             finishRecording()
@@ -182,22 +185,22 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     }
     @IBAction func saveButton(sender: AnyObject) {
       
-        dictionary["phraseName"] = nameField.text
-        dictionary["language"] = languageField.text
-        dictionary["time"] = String(30 - timer)
-       
-        dictionary["flag"] = languageField.text
-        switch genderField.selectedSegmentIndex
-        {
-        case 0:
-            dictionary["gender"] = "male"
-        case 1:
-            dictionary["gender"] = "female"
-        default:
-            break;
-        }
-        let audioFileName = audioURL.absoluteString
-        dictionary["url"] = audioFileName
+//        dictionary["phraseName"] = nameField.text
+//        dictionary["language"] = languageField.text
+//        dictionary["time"] = String(30 - timer)
+//       
+//        dictionary["flag"] = languageField.text
+//        switch genderField.selectedSegmentIndex
+//        {
+//        case 0:
+//            dictionary["gender"] = "male"
+//        case 1:
+//            dictionary["gender"] = "female"
+//        default:
+//            break;
+//        }
+//        let audioFileName = audioURL.absoluteString
+//        dictionary["url"] = audioFileName
         
     }
     
@@ -221,7 +224,26 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueIdentifer"{
+            saveView.hidden = true
+            RecordButton.hidden = false
+            TimerLabel.hidden = false
             if let destination = segue.destinationViewController as? PhrasesViewController {
+                dictionary["phraseName"] = nameField.text
+                dictionary["language"] = languageField.text
+                dictionary["time"] = String(30 - tempTimer)
+                
+                dictionary["flag"] = languageField.text
+                switch genderField.selectedSegmentIndex
+                {
+                case 0:
+                    dictionary["gender"] = "male"
+                case 1:
+                    dictionary["gender"] = "female"
+                default:
+                    break;
+                }
+                let audioFileName = audioURL.absoluteString
+                dictionary["url"] = audioFileName
                 destination.dictionary = dictionary
             }
         
@@ -239,10 +261,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, EZMicrophoneDel
     // MARK: EZMicrophoneDelegate
     //------------------------------------------------------------------------------
     
-    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
-        });
-    }
+//    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+//        });
+//    }
     
 }

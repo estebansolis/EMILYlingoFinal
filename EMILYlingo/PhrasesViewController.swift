@@ -18,8 +18,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
-     
+        tableView.sectionHeaderHeight = 0
 //        dictionary["phraseName"] = "Sit Down"
 //        dictionary["language"] = "Arabic"
 //        dictionary["time"] = "5"
@@ -27,6 +26,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 //        dictionary["gender"] = "male"
 //        phrases.append(Phrases(dictionary: dictionary)!)
         loadPhrases()
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
 

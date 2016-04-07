@@ -9,6 +9,6 @@
 #ifndef EMILYlingo_Bridging_Header_h
 #define EMILYlingo_Bridging_Header_h
 
-#import<EZAudio.h>
+//#import<EZAudio.h>
 
 #endif /* EMILYlingo_Bridging_Header_h */
