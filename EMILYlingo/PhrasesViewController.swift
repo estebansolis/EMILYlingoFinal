@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,6 +16,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var dictionary: [String:String]!
     var phrase: Phrases!
+    var audioPlayer: AVAudioPlayer?
     let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,22 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = indexPath.row;
+        let cell = phrases[row]
+        let toAppendString = cell.url!
+        let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
+            audioPlayer = sound
+            sound.play()
+            
+        } catch let error as NSError {
+            print(error)
+        }
+    }
     
 
     /*
@@ -68,5 +85,4 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
-
 }
