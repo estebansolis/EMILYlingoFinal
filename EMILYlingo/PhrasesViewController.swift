@@ -18,6 +18,15 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     var phrase: Phrases!
     var audioPlayer: AVAudioPlayer?
     let realm = try! Realm()
+    var soundFileURL: NSURL!
+    var count = 1
+    var sound: AVAudioPlayer?
+    
+    @IBOutlet weak var phraseLabel: UILabel!
+    @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var rewindButton: UIButton!
+    @IBOutlet weak var forwardButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -63,18 +72,29 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = phrases[row]
         let toAppendString = cell.url!
         let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        let soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
+        soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
         
         do {
-            let sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
+            sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
-            sound.play()
+            sound!.play()
+           // sound.pause()
             
         } catch let error as NSError {
             print(error)
         }
     }
     
+    @IBAction func playButtonAction(sender: AnyObject) {
+        if(count == 1){
+            count = 2
+            sound!.pause()
+        }
+        else{
+            count = 1
+            sound!.play()
+        }
+    }
 
     /*
     // MARK: - Navigation

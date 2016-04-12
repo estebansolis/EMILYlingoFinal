@@ -171,8 +171,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMILYlingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPP-Hl-Wrc">
+                                <rect key="frame" x="77" y="14" width="167" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="hse-M5-F5R"/>
+                                    <constraint firstAttribute="width" constant="167" id="qfk-tE-RSM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
+                                <rect key="frame" x="0.0" y="43" width="320" height="44"/>
+                                <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-j2-14K">
+                                <rect key="frame" x="7" y="14" width="30" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-qJ-Lhc">
+                                <rect key="frame" x="284" y="14" width="30" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="Bnf-Bb-Zql"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hND-Se-XHZ">
+                                <rect key="frame" x="0.0" y="460" width="320" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oT1-ce-F8u">
+                                        <rect key="frame" x="137" y="39" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="RuD-Dq-jfI" eventType="touchUpInside" id="dQs-HV-rpy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaM-uV-Kha">
+                                        <rect key="frame" x="23" y="39" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Audio File2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUC-DW-jjP">
+                                        <rect key="frame" x="117" y="8" width="85" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5m-O6-Gdf">
+                                        <rect key="frame" x="252" y="39" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HHN-2h-ZJb">
-                                <rect key="frame" x="0.0" y="87" width="320" height="481"/>
+                                <rect key="frame" x="0.0" y="87" width="320" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.62933260202407837" blue="0.62517005205154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -180,7 +233,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usflag" translatesAutoresizingMaskIntoConstraints="NO" id="u1X-DC-Zhj">
@@ -252,54 +305,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMILYlingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPP-Hl-Wrc">
-                                <rect key="frame" x="77" y="14" width="167" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="hse-M5-F5R"/>
-                                    <constraint firstAttribute="width" constant="167" id="qfk-tE-RSM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
-                                <rect key="frame" x="0.0" y="43" width="320" height="44"/>
-                                <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-j2-14K">
-                                <rect key="frame" x="7" y="14" width="30" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-qJ-Lhc">
-                                <rect key="frame" x="284" y="14" width="30" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="Bnf-Bb-Zql"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.88719434927112206" green="0.41887258651601744" blue="0.44621892177858002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Aqt-hj-95E" firstAttribute="top" secondItem="HHN-2h-ZJb" secondAttribute="bottom" id="0bp-yP-1Nu"/>
                             <constraint firstItem="Nje-j2-14K" firstAttribute="top" secondItem="fPP-Hl-Wrc" secondAttribute="top" id="1Ue-7h-xwU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q2V-qJ-Lhc" secondAttribute="trailing" constant="-10" id="5KY-hO-Qs9"/>
                             <constraint firstItem="q2V-qJ-Lhc" firstAttribute="leading" secondItem="fPP-Hl-Wrc" secondAttribute="trailing" constant="40" id="DAU-jX-Fal"/>
                             <constraint firstItem="Nje-j2-14K" firstAttribute="leading" secondItem="iZe-xt-8za" secondAttribute="leadingMargin" constant="-9" id="EzA-Kw-165"/>
+                            <constraint firstItem="hND-Se-XHZ" firstAttribute="top" secondItem="HHN-2h-ZJb" secondAttribute="bottom" id="G8T-ae-Ps8"/>
                             <constraint firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="JcD-Xi-5mY"/>
                             <constraint firstItem="fPP-Hl-Wrc" firstAttribute="top" secondItem="kLW-Kh-FNj" secondAttribute="bottom" constant="-6" id="MdM-61-i0l"/>
                             <constraint firstItem="fPP-Hl-Wrc" firstAttribute="centerX" secondItem="iZe-xt-8za" secondAttribute="centerX" id="Mro-1s-sqt"/>
                             <constraint firstItem="HHN-2h-ZJb" firstAttribute="top" secondItem="iZe-xt-8za" secondAttribute="top" constant="87" id="OyR-jw-gwB"/>
                             <constraint firstItem="rbq-2F-67O" firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="Y2p-RI-erK"/>
                             <constraint firstItem="fPP-Hl-Wrc" firstAttribute="leading" secondItem="Nje-j2-14K" secondAttribute="trailing" constant="40" id="eg9-oK-zAs"/>
+                            <constraint firstItem="hND-Se-XHZ" firstAttribute="leading" secondItem="HHN-2h-ZJb" secondAttribute="leading" id="f14-ia-9cq"/>
                             <constraint firstItem="rbq-2F-67O" firstAttribute="top" secondItem="fPP-Hl-Wrc" secondAttribute="bottom" id="hAi-FV-15N"/>
+                            <constraint firstItem="hND-Se-XHZ" firstAttribute="top" secondItem="iZe-xt-8za" secondAttribute="top" constant="460" id="jgP-X9-drL"/>
+                            <constraint firstItem="hND-Se-XHZ" firstAttribute="bottom" secondItem="Aqt-hj-95E" secondAttribute="top" id="ndW-BR-gHJ"/>
                             <constraint firstItem="HHN-2h-ZJb" firstAttribute="leading" secondItem="iZe-xt-8za" secondAttribute="leading" id="ohG-NB-IiE"/>
                             <constraint firstItem="rbq-2F-67O" firstAttribute="leading" secondItem="HHN-2h-ZJb" secondAttribute="leading" id="qcq-wj-7Ee"/>
+                            <constraint firstItem="hND-Se-XHZ" firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="v4L-qf-iK5"/>
                             <constraint firstItem="Nje-j2-14K" firstAttribute="baseline" secondItem="q2V-qJ-Lhc" secondAttribute="baseline" id="x0a-lI-5B2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GH6-FF-TtT"/>
                     <connections>
+                        <outlet property="forwardButton" destination="W5m-O6-Gdf" id="62N-1m-sVV"/>
+                        <outlet property="phraseLabel" destination="vUC-DW-jjP" id="cmS-1x-W5e"/>
+                        <outlet property="playPauseButton" destination="oT1-ce-F8u" id="bnE-xy-UAo"/>
+                        <outlet property="rewindButton" destination="RaM-uV-Kha" id="4sP-yd-72W"/>
                         <outlet property="searchDisplayController" destination="Em7-5C-dyi" id="NfU-Lz-Kmg"/>
                         <outlet property="tableView" destination="HHN-2h-ZJb" id="bxd-W6-XtT"/>
                     </connections>
@@ -342,6 +377,6 @@
         <image name="usflag" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DhO-lz-b0A"/>
+        <segue reference="Bnf-Bb-Zql"/>
     </inferredMetricsTieBreakers>
 </document>
