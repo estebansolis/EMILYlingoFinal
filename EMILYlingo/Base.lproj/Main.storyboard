@@ -157,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="342"/>
+            <point key="canvasLocation" x="1234" y="374"/>
         </scene>
         <!--Phrases View Controller-->
         <scene sceneID="45b-V9-XpR">
@@ -366,7 +366,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1192" y="342"/>
+            <point key="canvasLocation" x="632" y="342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eQ6-zk-eEY">
@@ -380,7 +380,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DhO-lz-b0A"/>
+                        <segue destination="RuD-Dq-jfI" kind="relationship" relationship="rootViewController" id="SkY-ov-1PA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frw-S0-CLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,6 +394,6 @@
         <image name="usflag" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bnf-Bb-Zql"/>
+        <segue reference="SkY-ov-1PA"/>
     </inferredMetricsTieBreakers>
 </document>

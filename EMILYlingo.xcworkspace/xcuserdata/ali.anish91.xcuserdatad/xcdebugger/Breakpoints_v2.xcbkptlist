@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
             endingLineNumber = "226"
-            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkName = "countdown()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
             endingLineNumber = "186"
-            landmarkName = "saveButton(_:)"
+            landmarkName = "discardButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
