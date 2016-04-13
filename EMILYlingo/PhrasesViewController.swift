@@ -27,6 +27,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var rewindButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var totalDuration: UILabel!
+    @IBOutlet weak var currentTimer: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -72,14 +74,21 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = phrases[row]
         let toAppendString = cell.url!
         let label = cell.phraseName!
+        let duration = cell.time!
         let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
         soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
         do {
             phraseLabel.text = label
+            if Int(duration) < 10 {
+                totalDuration.text = "0:0"+duration
+            }else{
+                totalDuration.text = "0:"+duration
+            }
+            //totalDuration.text = duration
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
             sound!.play()
-            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
             // sound.pause()
             
         } catch let error as NSError {
@@ -100,6 +109,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func updateAudioProgressView(){
         if ((audioPlayer?.playing) != nil) {
+            if (Int((sound?.currentTime)!)) < 10 {
+                currentTimer.text = "0:0"+String(Int((sound?.currentTime)!))
+            }else {
+                currentTimer.text = "0:"+String(Int((sound?.currentTime)!))
+            }
             progress.setProgress(Float((sound?.currentTime)!/(sound?.duration)!), animated: true)
         }
     }

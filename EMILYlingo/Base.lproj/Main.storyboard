@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -157,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="374"/>
+            <point key="canvasLocation" x="894" y="326"/>
         </scene>
         <!--Phrases View Controller-->
         <scene sceneID="45b-V9-XpR">
@@ -303,22 +304,46 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hP8-Dn-DwS">
-                                        <rect key="frame" x="36" y="10" width="251" height="2"/>
+                                        <rect key="frame" x="31" y="10" width="251" height="2"/>
                                     </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-mf-x8k">
+                                        <rect key="frame" x="286" y="2" width="28" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="TB9-Nv-2gW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axz-cz-ZFy">
+                                        <rect key="frame" x="3" y="1" width="35" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="c7S-et-1ck"/>
+                                            <constraint firstAttribute="width" constant="35" id="gmU-an-2y9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="W5m-O6-Gdf" firstAttribute="leading" secondItem="oT1-ce-F8u" secondAttribute="trailing" constant="69" id="7qI-0d-g2H"/>
-                                    <constraint firstAttribute="trailing" secondItem="hP8-Dn-DwS" secondAttribute="trailing" constant="33" id="BXf-4Z-oan"/>
+                                    <constraint firstAttribute="trailing" secondItem="hP8-Dn-DwS" secondAttribute="trailing" constant="38" id="BXf-4Z-oan"/>
+                                    <constraint firstAttribute="trailing" secondItem="P6H-mf-x8k" secondAttribute="trailing" constant="6" id="GKf-dC-JOz"/>
+                                    <constraint firstItem="Axz-cz-ZFy" firstAttribute="centerY" secondItem="P6H-mf-x8k" secondAttribute="centerY" id="Gww-jU-H5m"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="centerY" secondItem="hND-Se-XHZ" secondAttribute="centerY" id="KZd-5q-Rjh"/>
+                                    <constraint firstItem="Axz-cz-ZFy" firstAttribute="centerY" secondItem="hP8-Dn-DwS" secondAttribute="centerY" id="Or5-WI-pc8"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="leading" secondItem="RaM-uV-Kha" secondAttribute="trailing" constant="68" id="T1x-2n-pfh"/>
-                                    <constraint firstItem="hP8-Dn-DwS" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="36" id="YBl-pt-qQa"/>
+                                    <constraint firstItem="hP8-Dn-DwS" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="31" id="YBl-pt-qQa"/>
+                                    <constraint firstItem="Axz-cz-ZFy" firstAttribute="firstBaseline" secondItem="P6H-mf-x8k" secondAttribute="firstBaseline" constant="-1" id="Z4d-It-zHI"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="centerX" secondItem="vUC-DW-jjP" secondAttribute="centerX" id="ZVw-mU-Iz8"/>
                                     <constraint firstItem="vUC-DW-jjP" firstAttribute="top" secondItem="hP8-Dn-DwS" secondAttribute="top" constant="10" id="cNP-5q-MKG"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="baseline" secondItem="RaM-uV-Kha" secondAttribute="baseline" id="gXj-v0-J8C"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="centerX" secondItem="hND-Se-XHZ" secondAttribute="centerX" id="tMC-R0-NU2"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="top" secondItem="hP8-Dn-DwS" secondAttribute="bottom" constant="27" id="ten-xe-YqB"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="baseline" secondItem="W5m-O6-Gdf" secondAttribute="baseline" id="zJH-y6-vY6"/>
+                                    <constraint firstItem="Axz-cz-ZFy" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="3" id="zaI-de-wfM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -347,6 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GH6-FF-TtT"/>
                     <connections>
+                        <outlet property="currentTimer" destination="Axz-cz-ZFy" id="NkR-i7-cdk"/>
                         <outlet property="forwardButton" destination="W5m-O6-Gdf" id="62N-1m-sVV"/>
                         <outlet property="phraseLabel" destination="vUC-DW-jjP" id="cmS-1x-W5e"/>
                         <outlet property="playPauseButton" destination="oT1-ce-F8u" id="bnE-xy-UAo"/>
@@ -354,6 +380,7 @@
                         <outlet property="rewindButton" destination="RaM-uV-Kha" id="4sP-yd-72W"/>
                         <outlet property="searchDisplayController" destination="Em7-5C-dyi" id="NfU-Lz-Kmg"/>
                         <outlet property="tableView" destination="HHN-2h-ZJb" id="bxd-W6-XtT"/>
+                        <outlet property="totalDuration" destination="P6H-mf-x8k" id="u5B-hs-2EP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCH-Pr-HM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,7 +393,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="632" y="342"/>
+            <point key="canvasLocation" x="348" y="326"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eQ6-zk-eEY">
@@ -385,7 +412,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frw-S0-CLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="348"/>
+            <point key="canvasLocation" x="-206" y="342"/>
         </scene>
     </scenes>
     <resources>
@@ -394,6 +421,6 @@
         <image name="usflag" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SkY-ov-1PA"/>
+        <segue reference="m6i-NC-ybm"/>
     </inferredMetricsTieBreakers>
 </document>
