@@ -26,7 +26,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var rewindButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
-    
+    @IBOutlet weak var progress: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -71,14 +71,16 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         let row = indexPath.row;
         let cell = phrases[row]
         let toAppendString = cell.url!
+        let label = cell.phraseName!
         let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
         soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
-        
         do {
+            phraseLabel.text = label
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
             sound!.play()
-           // sound.pause()
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
+            // sound.pause()
             
         } catch let error as NSError {
             print(error)
@@ -96,6 +98,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+    func updateAudioProgressView(){
+        if ((audioPlayer?.playing) != nil) {
+            progress.setProgress(Float((sound?.currentTime)!/(sound?.duration)!), animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 
