@@ -10,16 +10,19 @@ PODS:
   - Realm/Headers (0.98.6)
   - RealmSwift (0.98.6):
     - Realm (= 0.98.6)
+  - SlideMenuControllerSwift (2.1.1)
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
   - EZAudio (~> 1.0)
   - RealmSwift
+  - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   Realm: 44803f35418c5d89b27825a564247fcd190de37e
   RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
+  SlideMenuControllerSwift: 82ada9b04e03538c84d034cf1c09e5849c0113f7
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
 COCOAPODS: 0.39.0

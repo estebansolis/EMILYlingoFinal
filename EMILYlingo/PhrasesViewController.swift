@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import AVFoundation
+import SlideMenuControllerSwift
 
 class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
@@ -49,12 +50,20 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarItem()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sliderMenu(sender: AnyObject) {
+        self.slideMenuController()?.openRight()
+    }
     func loadPhrases(){
         // query realm and add it to our phrase array to view 
         let ph = realm.objects(Phrases)

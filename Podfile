@@ -4,6 +4,7 @@
  use_frameworks!
 
 target 'EMILYlingo' do
+    pod 'SlideMenuControllerSwift'
     pod 'RealmSwift'
     pod 'EZAudio','~>1.0'
 end

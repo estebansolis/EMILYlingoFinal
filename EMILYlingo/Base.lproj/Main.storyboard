@@ -163,7 +163,7 @@
         <!--Phrases View Controller-->
         <scene sceneID="45b-V9-XpR">
             <objects>
-                <viewController id="RuD-Dq-jfI" customClass="PhrasesViewController" customModule="EMILYlingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhrasesViewController" id="RuD-Dq-jfI" customClass="PhrasesViewController" customModule="EMILYlingo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kLW-Kh-FNj"/>
                         <viewControllerLayoutGuide type="bottom" id="Aqt-hj-95E"/>
@@ -172,39 +172,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMILYlingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPP-Hl-Wrc">
-                                <rect key="frame" x="77" y="14" width="167" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="hse-M5-F5R"/>
-                                    <constraint firstAttribute="width" constant="167" id="qfk-tE-RSM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
-                                <rect key="frame" x="0.0" y="43" width="320" height="44"/>
-                                <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-j2-14K">
-                                <rect key="frame" x="7" y="14" width="30" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-qJ-Lhc">
-                                <rect key="frame" x="284" y="14" width="30" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="Bnf-Bb-Zql"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HHN-2h-ZJb">
-                                <rect key="frame" x="0.0" y="87" width="320" height="373"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.62933260202407837" blue="0.62517005205154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhrasesCell" rowHeight="48" id="cL4-fz-5LW" customClass="PhrasesCell" customModule="EMILYlingo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="48"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -346,31 +320,34 @@
                                     <constraint firstItem="Axz-cz-ZFy" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="3" id="zaI-de-wfM"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.88719434927112206" green="0.41887258651601744" blue="0.44621892177858002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Nje-j2-14K" firstAttribute="top" secondItem="fPP-Hl-Wrc" secondAttribute="top" id="1Ue-7h-xwU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="q2V-qJ-Lhc" secondAttribute="trailing" constant="-10" id="5KY-hO-Qs9"/>
-                            <constraint firstItem="q2V-qJ-Lhc" firstAttribute="leading" secondItem="fPP-Hl-Wrc" secondAttribute="trailing" constant="40" id="DAU-jX-Fal"/>
-                            <constraint firstItem="Nje-j2-14K" firstAttribute="leading" secondItem="iZe-xt-8za" secondAttribute="leadingMargin" constant="-9" id="EzA-Kw-165"/>
                             <constraint firstItem="hND-Se-XHZ" firstAttribute="top" secondItem="iZe-xt-8za" secondAttribute="top" constant="460" id="FcW-3E-9V8"/>
                             <constraint firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="JcD-Xi-5mY"/>
                             <constraint firstItem="hND-Se-XHZ" firstAttribute="bottom" secondItem="Aqt-hj-95E" secondAttribute="top" id="Jhs-kx-OZg"/>
-                            <constraint firstItem="fPP-Hl-Wrc" firstAttribute="top" secondItem="kLW-Kh-FNj" secondAttribute="bottom" constant="-6" id="MdM-61-i0l"/>
-                            <constraint firstItem="fPP-Hl-Wrc" firstAttribute="centerX" secondItem="iZe-xt-8za" secondAttribute="centerX" id="Mro-1s-sqt"/>
-                            <constraint firstItem="HHN-2h-ZJb" firstAttribute="top" secondItem="iZe-xt-8za" secondAttribute="top" constant="87" id="OyR-jw-gwB"/>
+                            <constraint firstItem="HHN-2h-ZJb" firstAttribute="top" secondItem="iZe-xt-8za" secondAttribute="top" constant="108" id="OyR-jw-gwB"/>
                             <constraint firstItem="rbq-2F-67O" firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="Y2p-RI-erK"/>
                             <constraint firstItem="hND-Se-XHZ" firstAttribute="trailing" secondItem="HHN-2h-ZJb" secondAttribute="trailing" id="alC-pg-9nf"/>
-                            <constraint firstItem="fPP-Hl-Wrc" firstAttribute="leading" secondItem="Nje-j2-14K" secondAttribute="trailing" constant="40" id="eg9-oK-zAs"/>
-                            <constraint firstItem="rbq-2F-67O" firstAttribute="top" secondItem="fPP-Hl-Wrc" secondAttribute="bottom" id="hAi-FV-15N"/>
                             <constraint firstItem="hND-Se-XHZ" firstAttribute="top" secondItem="HHN-2h-ZJb" secondAttribute="bottom" id="kgC-hN-3vL"/>
+                            <constraint firstItem="rbq-2F-67O" firstAttribute="top" secondItem="kLW-Kh-FNj" secondAttribute="bottom" id="m5D-0A-TJd"/>
                             <constraint firstItem="hND-Se-XHZ" firstAttribute="leading" secondItem="HHN-2h-ZJb" secondAttribute="leading" id="mnE-xu-yPB"/>
                             <constraint firstItem="HHN-2h-ZJb" firstAttribute="leading" secondItem="iZe-xt-8za" secondAttribute="leading" id="ohG-NB-IiE"/>
                             <constraint firstItem="rbq-2F-67O" firstAttribute="leading" secondItem="HHN-2h-ZJb" secondAttribute="leading" id="qcq-wj-7Ee"/>
-                            <constraint firstItem="Nje-j2-14K" firstAttribute="baseline" secondItem="q2V-qJ-Lhc" secondAttribute="baseline" id="x0a-lI-5B2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GH6-FF-TtT"/>
+                    <navigationItem key="navigationItem" id="GH6-FF-TtT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="sp6-CY-9gY">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="push" id="V1j-cW-Ldq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentTimer" destination="Axz-cz-ZFy" id="NkR-i7-cdk"/>
                         <outlet property="forwardButton" destination="W5m-O6-Gdf" id="62N-1m-sVV"/>
@@ -396,12 +373,30 @@
             </objects>
             <point key="canvasLocation" x="348" y="326"/>
         </scene>
+        <!--Left View Controller-->
+        <scene sceneID="rPF-BM-h58">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="Q8X-AO-kMY" customClass="LeftViewController" customModule="EMILYlingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TM1-VN-fhM"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzM-lX-7il"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kAx-WG-U3R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h07-U2-qT0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbY-Nu-GL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="988"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eQ6-zk-eEY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GpH-O7-kbi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GpH-O7-kbi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9g-VE-mqJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -422,6 +417,6 @@
         <image name="usflag" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m6i-NC-ybm"/>
+        <segue reference="SkY-ov-1PA"/>
     </inferredMetricsTieBreakers>
 </document>
