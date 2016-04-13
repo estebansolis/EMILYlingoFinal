@@ -379,6 +379,7 @@
                         <outlet property="progress" destination="hP8-Dn-DwS" id="KAa-48-hCK"/>
                         <outlet property="rewindButton" destination="RaM-uV-Kha" id="4sP-yd-72W"/>
                         <outlet property="searchDisplayController" destination="Em7-5C-dyi" id="NfU-Lz-Kmg"/>
+                        <outlet property="searchPhraseBar" destination="rbq-2F-67O" id="jX8-j7-TWP"/>
                         <outlet property="tableView" destination="HHN-2h-ZJb" id="bxd-W6-XtT"/>
                         <outlet property="totalDuration" destination="P6H-mf-x8k" id="u5B-hs-2EP"/>
                     </connections>

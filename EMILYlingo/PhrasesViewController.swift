@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import AVFoundation
 
-class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     var phrases = [Phrases]()
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +22,10 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     var count = 1
     var sound: AVAudioPlayer?
     
+    var searchActive : Bool = false
+    var filtered:[Phrases] = []
+    
+    @IBOutlet weak var searchPhraseBar: UISearchBar!
     @IBOutlet weak var phraseLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var rewindButton: UIButton!
@@ -34,6 +38,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         tableView.sectionHeaderHeight = 0
+        searchPhraseBar.delegate = self
 //        dictionary["phraseName"] = "Sit Down"
 //        dictionary["language"] = "Arabic"
 //        dictionary["time"] = "5"
@@ -58,14 +63,22 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return phrases.count
+        if(searchActive){
+            return filtered.count
+        }
+        return phrases.count
  
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PhrasesCell", forIndexPath: indexPath) as! PhrasesCell
-        cell.phrase = phrases[indexPath.row]
+        if(searchActive){
+            cell.phrase = filtered[indexPath.row]
+        }else {
+            cell.phrase = phrases[indexPath.row]
+        }
+        //cell.phrase = phrases[indexPath.row]
         return cell
     }
     
@@ -96,6 +109,31 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true
+    }
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false
+    }
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+    }
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+    }
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+        filtered = phrases.filter({ (text) -> Bool in
+            let tmp: NSString = String(text)
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(filtered.count == 0){
+            searchActive = false
+        }else {
+            searchActive = true
+        }
+        self.tableView.reloadData()
+    }
     @IBAction func playButtonAction(sender: AnyObject) {
         if(count == 1){
             count = 2
