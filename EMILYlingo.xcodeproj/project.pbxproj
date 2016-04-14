@@ -293,7 +293,7 @@
 				TargetAttributes = {
 					5FBB23691CADD3DB00F59715 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2Y5276U3HZ;
+						DevelopmentTeam = F5BULQZ9SH;
 					};
 					5FBB23801CADD3DC00F59715 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -563,7 +563,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EMILYlingo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo.mine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -580,7 +580,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EMILYlingo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EMILYlingo.EMILYlingo.mine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
