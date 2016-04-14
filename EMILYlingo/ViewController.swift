@@ -246,7 +246,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     }
     
     func countdown(){
-        if(timer >= 0){
+        if(timer > 0){
             timer = timer - 1
             TimerLabel.text = String(timer)
         }
