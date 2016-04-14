@@ -34,6 +34,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var totalDuration: UILabel!
     @IBOutlet weak var currentTimer: UILabel!
+    @IBOutlet weak var emojiLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

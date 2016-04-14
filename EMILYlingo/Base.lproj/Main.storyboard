@@ -189,7 +189,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">
-                                                    <rect key="frame" x="14" y="12" width="98" height="21"/>
+                                                    <rect key="frame" x="21" y="10" width="98" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="98" id="XUa-Ff-BcT"/>
                                                     </constraints>
@@ -198,7 +198,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kw-ko-GBw">
-                                                    <rect key="frame" x="241" y="20" width="35" height="19"/>
+                                                    <rect key="frame" x="239" y="20" width="35" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="GcN-Ad-2Bf"/>
                                                     </constraints>
@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMm-lK-w34">
-                                                    <rect key="frame" x="14" y="31" width="50" height="21"/>
+                                                    <rect key="frame" x="21" y="29" width="50" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="sQf-8G-mQ3"/>
                                                     </constraints>
@@ -223,18 +223,27 @@
                                                     </constraints>
                                                     <state key="normal" image="edit-button"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="👩🇬🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAE-MQ-bOJ">
+                                                    <rect key="frame" x="176" y="19" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="3Kw-ko-GBw" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="12" id="1Nm-2G-sFz"/>
-                                                <constraint firstItem="aMm-lK-w34" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="23" id="6sV-rh-93C"/>
-                                                <constraint firstItem="aT4-gB-Vbd" firstAttribute="leading" secondItem="99r-kd-5cJ" secondAttribute="leadingMargin" constant="6" id="EKu-wL-39n"/>
+                                                <constraint firstItem="JAE-MQ-bOJ" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="11" id="4zJ-2S-pXb"/>
+                                                <constraint firstItem="aMm-lK-w34" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="21" id="6sV-rh-93C"/>
+                                                <constraint firstItem="aT4-gB-Vbd" firstAttribute="leading" secondItem="99r-kd-5cJ" secondAttribute="leadingMargin" constant="13" id="EKu-wL-39n"/>
                                                 <constraint firstItem="aMm-lK-w34" firstAttribute="leading" secondItem="aT4-gB-Vbd" secondAttribute="leading" id="G83-y8-MEP"/>
                                                 <constraint firstItem="3Kw-ko-GBw" firstAttribute="centerY" secondItem="qjv-1X-f5Q" secondAttribute="centerY" id="Hd6-qV-jT9"/>
-                                                <constraint firstItem="aT4-gB-Vbd" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="4" id="N21-Hi-M3J"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aMm-lK-w34" secondAttribute="bottom" constant="-0.5" id="PIq-LX-sc9"/>
+                                                <constraint firstItem="3Kw-ko-GBw" firstAttribute="leading" secondItem="JAE-MQ-bOJ" secondAttribute="trailing" constant="19" id="Mfc-s2-JJe"/>
+                                                <constraint firstItem="aT4-gB-Vbd" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="2" id="N21-Hi-M3J"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aMm-lK-w34" secondAttribute="bottom" constant="2" id="PIq-LX-sc9"/>
                                                 <constraint firstItem="qjv-1X-f5Q" firstAttribute="top" secondItem="99r-kd-5cJ" secondAttribute="topMargin" constant="18" id="SNZ-XF-4sY"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aT4-gB-Vbd" secondAttribute="bottom" constant="18.5" id="WON-aM-03J"/>
-                                                <constraint firstItem="qjv-1X-f5Q" firstAttribute="leading" secondItem="3Kw-ko-GBw" secondAttribute="trailing" constant="8" symbolic="YES" id="ixR-tH-Jq1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JAE-MQ-bOJ" secondAttribute="bottom" constant="12" id="SUa-er-TZL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aT4-gB-Vbd" secondAttribute="bottom" constant="21" id="WON-aM-03J"/>
+                                                <constraint firstItem="qjv-1X-f5Q" firstAttribute="leading" secondItem="3Kw-ko-GBw" secondAttribute="trailing" constant="10" id="ixR-tH-Jq1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qjv-1X-f5Q" secondAttribute="trailing" constant="7" id="kol-m3-JeQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qjv-1X-f5Q" secondAttribute="bottom" constant="18" id="rvF-Zc-it1"/>
                                             </constraints>
@@ -244,6 +253,7 @@
                                             <accessibilityTraits key="traits" header="YES"/>
                                         </accessibility>
                                         <connections>
+                                            <outlet property="emojiLabel" destination="JAE-MQ-bOJ" id="wJ4-k5-uuE"/>
                                             <outlet property="languageLabel" destination="aMm-lK-w34" id="2aZ-9P-QSw"/>
                                             <outlet property="phraseNameLabel" destination="aT4-gB-Vbd" id="HTN-WX-Nte"/>
                                             <outlet property="timeLabel" destination="3Kw-ko-GBw" id="Bvs-R7-XlS"/>
