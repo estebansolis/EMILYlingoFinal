@@ -141,7 +141,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vE6-3o-B5y">
-                        <barButtonItem key="leftBarButtonItem" title="-" id="2BB-tc-3b1"/>
+                        <barButtonItem key="leftBarButtonItem" title="-" id="2BB-tc-3b1">
+                            <connections>
+                                <segue destination="RuD-Dq-jfI" kind="push" id="8Bh-zb-Xbc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="RecordButton" destination="Nvv-DV-z7t" id="sMC-qh-bIn"/>
@@ -178,7 +182,7 @@
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.62933260202407837" blue="0.62517005205154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhrasesCell" rowHeight="48" id="cL4-fz-5LW" customClass="PhrasesCell" customModule="EMILYlingo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="48"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -320,7 +324,7 @@
                                     <constraint firstItem="Axz-cz-ZFy" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="3" id="zaI-de-wfM"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -512,6 +516,6 @@
         <image name="usflag" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SkY-ov-1PA"/>
+        <segue reference="m6i-NC-ybm"/>
     </inferredMetricsTieBreakers>
 </document>
