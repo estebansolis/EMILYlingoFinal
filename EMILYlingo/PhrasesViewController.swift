@@ -47,7 +47,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 //        dictionary["gender"] = "male"
 //        phrases.append(Phrases(dictionary: dictionary)!)
         
-        sorting()
+        //sorting()
         loadPhrases()
         tableView.reloadData()
         // Do any additional setup after loading the view.
@@ -91,7 +91,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             return filtered.count
         }
         return phrases.count
- 
     }
     
     
@@ -101,6 +100,18 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.phrase = filtered[indexPath.row]
         }else {
             cell.phrase = phrases[indexPath.row]
+        }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let sort = defaults.stringForKey("Sorting"){
+            if(sort == "By Date"){
+                phrases = phrases.reverse()
+//                tableView.reloadData();
+            }
+            if(sort == "Alphabetically"){
+                phrases.sortInPlace({ $1.phraseName > $0.phraseName })
+                //tableView.reloadData();
+            }
         }
         //cell.phrase = phrases[indexPath.row]
         return cell
