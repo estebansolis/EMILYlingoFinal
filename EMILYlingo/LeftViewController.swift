@@ -10,25 +10,39 @@ import UIKit
 import SlideMenuControllerSwift
 
 class LeftViewController: UIViewController {
+    
 
-    @IBOutlet weak var tableView: UITableView!
-    var languages = ["English","Spanish","Arabic"]
+    @IBOutlet weak var arabicButton: UIButton!
+    @IBOutlet weak var englishButton: UIButton!
+    @IBOutlet weak var spanishButton: UIButton!
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     var mainViewController: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadLanguages()
-        tableView.reloadData()
-        // Do any additional setup after loading the view.
-    }
 
-    func loadLanguages(){
-        
+        // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func changeEnglish(sender: AnyObject) {
+        defaults.setObject("English", forKey: "Language")
+    }
+    
+
+    @IBAction func changeSpanish(sender: AnyObject) {
+        defaults.setObject("Spanish", forKey: "Language")
+    }
+    
+    @IBAction func changeArabic(sender: AnyObject) {
+        defaults.setObject("Arabic", forKey: "Language")
+    }
+
     /*
     // MARK: - Navigation
 

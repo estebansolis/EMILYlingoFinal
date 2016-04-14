@@ -61,9 +61,25 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let language = defaults.stringForKey("Language"){
+            if(language == "English"){
+                
+            }
+            if(language == "Spanish"){
+                saveButton.setTitle("abroar", forState: .Normal)
+            }
+            if(language == "Arabic"){
+                
+            }
+        }
+        
         cancelButton.hidden = true
         saveButton.hidden = true
         saveView.hidden = true
+    
+        
         //microphone = EZMicrophone(delegate: self, startsImmediately: true);
         //plot?.backgroundColor = UIColor.blackColor()
         //let plotType: EZPlotType = EZPlotType.Buffer
