@@ -216,10 +216,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-1X-f5Q">
-                                                    <rect key="frame" x="284" y="26" width="21" height="8"/>
+                                                    <rect key="frame" x="284" y="26" width="21" height="7"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="21" id="dMg-oU-84x"/>
-                                                        <constraint firstAttribute="height" constant="8" id="mi4-hc-59O"/>
+                                                        <constraint firstAttribute="height" constant="7" id="mi4-hc-59O"/>
                                                     </constraints>
                                                     <state key="normal" image="edit-button"/>
                                                 </button>
@@ -245,7 +245,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="aT4-gB-Vbd" secondAttribute="bottom" constant="21" id="WON-aM-03J"/>
                                                 <constraint firstItem="qjv-1X-f5Q" firstAttribute="leading" secondItem="3Kw-ko-GBw" secondAttribute="trailing" constant="10" id="ixR-tH-Jq1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qjv-1X-f5Q" secondAttribute="trailing" constant="7" id="kol-m3-JeQ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="qjv-1X-f5Q" secondAttribute="bottom" constant="18" id="rvF-Zc-it1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qjv-1X-f5Q" secondAttribute="bottom" constant="19" id="rvF-Zc-it1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.62933260202407837" blue="0.62517005205154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -328,7 +328,7 @@
                                     <constraint firstItem="Axz-cz-ZFy" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="3" id="zaI-de-wfM"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
+                            <searchBar contentMode="redraw" misplaced="YES" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-2F-67O">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <color key="barTintColor" red="0.88719434929999996" green="0.41887258649999998" blue="0.4462189218" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -350,7 +350,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GH6-FF-TtT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="sp6-CY-9gY">
+                        <barButtonItem key="rightBarButtonItem" image="wave-icon" id="sp6-CY-9gY">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="push" id="V1j-cW-Ldq"/>
                             </connections>
@@ -517,6 +517,7 @@
     <resources>
         <image name="RecordOff.png" width="64" height="64"/>
         <image name="edit-button" width="400" height="126"/>
+        <image name="wave-icon" width="28" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="m6i-NC-ybm"/>
