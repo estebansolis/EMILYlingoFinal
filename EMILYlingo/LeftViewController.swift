@@ -8,13 +8,18 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import RealmSwift
 
 class LeftViewController: UIViewController {
     
 
+    @IBOutlet weak var alphabeticallyButton: UIButton!
+    @IBOutlet weak var byDateButton: UIButton!
     @IBOutlet weak var arabicButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var spanishButton: UIButton!
+    let realm = try! Realm()
+    var phrases = [Phrases]()
     
     let defaults = NSUserDefaults.standardUserDefaults()
 
@@ -25,6 +30,12 @@ class LeftViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func loadPhrases(){
+        let ph = realm.objects(Phrases)
+        
+        phrases = Array(ph)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,17 +43,30 @@ class LeftViewController: UIViewController {
     
     @IBAction func changeEnglish(sender: AnyObject) {
         defaults.setObject("English", forKey: "Language")
+        self.slideMenuController()?.closeLeft()
     }
     
 
     @IBAction func changeSpanish(sender: AnyObject) {
         defaults.setObject("Spanish", forKey: "Language")
+        self.slideMenuController()?.closeLeft()
     }
     
     @IBAction func changeArabic(sender: AnyObject) {
         defaults.setObject("Arabic", forKey: "Language")
+        self.slideMenuController()?.closeLeft()
     }
 
+    
+    @IBAction func sortByDate(sender: AnyObject) {
+        defaults.setObject("By Date", forKey: "Sorting")
+        self.slideMenuController()?.closeLeft()
+    }
+    
+    @IBAction func sortAlphabetically(sender: AnyObject) {
+        defaults.setObject("Alphabetically", forKey: "Sorting")
+        self.slideMenuController()?.closeLeft()
+    }
     /*
     // MARK: - Navigation
 

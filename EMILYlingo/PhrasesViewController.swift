@@ -46,11 +46,26 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 //        dictionary["flag"] = "usflag"
 //        dictionary["gender"] = "male"
 //        phrases.append(Phrases(dictionary: dictionary)!)
+        
+        sorting()
         loadPhrases()
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
+    func sorting(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let sort = defaults.stringForKey("Sorting"){
+            if(sort == "By Date"){
+                //phrases.reverse()
+                //tableView.reloadData();
+            }
+            if(sort == "Alphabetically"){
+                phrases.sortInPlace({ $0.phraseName > $1.phraseName })
+                //tableView.reloadData();
+            }
+        }
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
