@@ -183,14 +183,23 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         self.tableView.reloadData()
     }
+    
+    
+    
     @IBAction func playButtonAction(sender: AnyObject) {
         if(count == 1){
             count = 2
-            sound!.pause()
+            if((sound?.play()) != nil)
+            {
+                sound!.pause()
+            }
         }
         else{
             count = 1
-            sound!.play()
+            if((sound?.play()) != nil)
+            {
+                sound!.play()
+            }
         }
     }
 
