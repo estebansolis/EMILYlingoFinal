@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import AVFoundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophoneDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate {//, EZMicrophoneDelegate {
     
     //------------------------------------------------------------------------------
     // MARK: Properties
@@ -113,6 +113,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophon
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
+            
+            nameField.delegate = self
+            languageField.delegate = self
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission(){[unowned self] (allowed: Bool) -> Void in
@@ -128,6 +131,13 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {//, EZMicrophon
             
         }
         
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 16
+        let currentString: NSString = textField.text!
+        let newString: NSString = currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
     }
     
     func loadRecordingUI(){
