@@ -153,8 +153,11 @@
                         <outlet property="cancelButton" destination="BlJ-0u-Kll" id="Mg3-vH-nI9"/>
                         <outlet property="cancelPhraseButton" destination="WYr-rd-1Sp" id="5jV-tN-1gr"/>
                         <outlet property="genderField" destination="J9a-2z-mgc" id="1aW-8e-9Qi"/>
+                        <outlet property="genderLabel" destination="hw2-bS-hBU" id="rzF-4d-O5B"/>
                         <outlet property="languageField" destination="ECP-rO-GnN" id="xsv-eY-mrr"/>
+                        <outlet property="languageLabel" destination="AeH-RD-17D" id="8fG-01-liI"/>
                         <outlet property="nameField" destination="mzZ-Tn-gx4" id="1Qc-Mw-tCM"/>
+                        <outlet property="nameLabel" destination="bBz-Rn-9eU" id="9vZ-iU-ohT"/>
                         <outlet property="saveButton" destination="n31-wG-kbN" id="dBy-3y-gML"/>
                         <outlet property="savePhraseButton" destination="Wsy-6R-Ukv" id="3TZ-ps-HSb"/>
                         <outlet property="saveView" destination="yca-UI-bRT" id="0AV-Yf-O0h"/>
@@ -185,10 +188,10 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">
                                                     <rect key="frame" x="21" y="10" width="98" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="98" id="XUa-Ff-BcT"/>
@@ -206,7 +209,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMm-lK-w34">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMm-lK-w34">
                                                     <rect key="frame" x="21" y="29" width="50" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="sQf-8G-mQ3"/>
@@ -226,7 +229,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="👩🇬🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAE-MQ-bOJ">
                                                     <rect key="frame" x="176" y="19" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -406,11 +409,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-FJ-bJH">
-                                <rect key="frame" x="34" y="92" width="230" height="26"/>
+                                <rect key="frame" x="34" y="90" width="230" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="JKU-Oj-uRV"/>
                                 </constraints>
-                                <state key="normal" title="Spanish">
+                                <state key="normal" title="Turkish">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -418,11 +421,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zn4-y7-gl7">
-                                <rect key="frame" x="34" y="126" width="230" height="27"/>
+                                <rect key="frame" x="34" y="124" width="230" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="ocI-Vv-9jW"/>
                                 </constraints>
-                                <state key="normal" title="Arabic">
+                                <state key="normal" title="Greek">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
