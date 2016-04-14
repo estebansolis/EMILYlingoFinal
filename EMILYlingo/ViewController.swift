@@ -32,6 +32,11 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     
     @IBOutlet weak var genderField: UISegmentedControl!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var languageLabel: UILabel!
+    
+    @IBOutlet weak var genderLabel: UILabel!
     let realm = try! Realm()
     
     var audioURL: NSURL!
@@ -65,12 +70,32 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
             if(language == "English"){
+                saveButton.setTitle("Save", forState: .Normal)
+                cancelButton.setTitle("Cancel", forState: .Normal)
+                savePhraseButton.setTitle("Save", forState: .Normal)
+                cancelPhraseButton.setTitle("Cancel", forState: .Normal)
+                nameLabel.text = "Name:"
+                languageLabel.text = "Language:"
+                genderLabel.text = "Gender:"
                 
             }
-            if(language == "Spanish"){
-                saveButton.setTitle("abroar", forState: .Normal)
+            if(language == "Turkish"){
+                saveButton.setTitle("Kaydet", forState: .Normal)
+                cancelButton.setTitle("Iptal", forState: .Normal)
+                savePhraseButton.setTitle("Kaydet", forState: .Normal)
+                cancelPhraseButton.setTitle("Iptal", forState: .Normal)
+                nameLabel.text = "Isim:"
+                languageLabel.text = "Dil:"
+                genderLabel.text = "Cinsiyet:"
             }
-            if(language == "Arabic"){
+            if(language == "Greek"){
+                saveButton.setTitle("αποθηκεύσετε", forState: .Normal)
+                cancelButton.setTitle("ματαίωση", forState: .Normal)
+                savePhraseButton.setTitle("αποθηκεύσετε", forState: .Normal)
+                cancelPhraseButton.setTitle("ματαίωση", forState: .Normal)
+                nameLabel.text = "Όνομα:"
+                languageLabel.text = "Γλώσσα:"
+                genderLabel.text = "γένος:"
                 
             }
         }

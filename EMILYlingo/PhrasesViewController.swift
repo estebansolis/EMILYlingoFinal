@@ -37,6 +37,19 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var emojiLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let language = defaults.stringForKey("Language"){
+            if(language == "English"){
+               searchPhraseBar.placeholder = "Search"
+            }
+            if(language == "Turkish"){
+                searchPhraseBar.placeholder = "Arama"
+                
+            }
+            if(language == "Greek"){
+                searchPhraseBar.placeholder = "Έρευνα"
+            }
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.sectionHeaderHeight = 0

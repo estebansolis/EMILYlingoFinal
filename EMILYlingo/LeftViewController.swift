@@ -48,12 +48,12 @@ class LeftViewController: UIViewController {
     
 
     @IBAction func changeSpanish(sender: AnyObject) {
-        defaults.setObject("Spanish", forKey: "Language")
+        defaults.setObject("Turkish", forKey: "Language")
         self.slideMenuController()?.closeLeft()
     }
     
     @IBAction func changeArabic(sender: AnyObject) {
-        defaults.setObject("Arabic", forKey: "Language")
+        defaults.setObject("Greek", forKey: "Language")
         self.slideMenuController()?.closeLeft()
     }
 
