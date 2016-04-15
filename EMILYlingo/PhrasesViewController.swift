@@ -35,8 +35,27 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var totalDuration: UILabel!
     @IBOutlet weak var currentTimer: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
+    
+    @IBOutlet weak var saveEditButton: UIButton!
+    @IBOutlet weak var cancelEditButton: UIButton!
+    @IBOutlet weak var nameEditLabel: UILabel!
+    @IBOutlet weak var languageEditLabel: UILabel!
+    @IBOutlet weak var genderEditLabel: UILabel!
+    @IBOutlet weak var nameEditField: UITextField!
+    @IBOutlet weak var languageEditField: UITextField!
+    
+    @IBOutlet weak var genderEditSegment: UISegmentedControl!
+    
+    @IBOutlet weak var editView: UIView!
+    
+    var Name: String?
+    var language: String?
+    var gender: String?
+    var editUrl: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        editView.hidden = true
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
             if(language == "English"){
@@ -116,8 +135,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.phrase = phrases[indexPath.row]
         }
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let sort = defaults.stringForKey("Sorting"){
+        //let defaults = NSUserDefaults.standardUserDefaults()
+        /*if let sort = defaults.stringForKey("Sorting"){
             if(sort == "By Date"){
                 phrases = phrases.reverse()
 //                tableView.reloadData();
@@ -126,7 +145,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 phrases.sortInPlace({ $1.phraseName > $0.phraseName })
                 //tableView.reloadData();
             }
-        }
+        }*/
         //cell.phrase = phrases[indexPath.row]
         return cell
     }
@@ -150,7 +169,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
             sound!.play()
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
+            NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
             // sound.pause()
             
         } catch let error as NSError {
@@ -158,6 +177,22 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+ 
+    }
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        var editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Edit" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            let row = indexPath.row
+            let cell = self.phrases[row]
+            self.editUrl = cell.url!
+            self.editView.hidden = false
+            //
+     
+
+    })
+    
+        return [editAction]
+    }
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
     }
@@ -204,6 +239,45 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             progress.setProgress(Float((sound?.currentTime)!/(sound?.duration)!), animated: true)
         }
     }
+    
+    @IBAction func editButton(sender: AnyObject) {
+        editView.hidden = false
+    }
+    
+
+    @IBAction func cancelActionButton(sender: AnyObject) {
+        editView.hidden = true
+    }
+    
+
+    @IBAction func saveActionButton(sender: AnyObject) {
+        self.Name = self.nameEditField.text
+        self.language = self.languageEditField.text
+        switch self.genderEditSegment.selectedSegmentIndex
+        {
+        case 0:
+            self.gender = "male"
+        case 1:
+            self.gender = "female"
+        default:
+            break;
+        }
+        let url = editUrl!
+        dispatch_async(dispatch_queue_create("background", nil)) {
+            let realm = try! Realm()
+            let predicate = NSPredicate(format: "url BEGINSWITH %@", url)
+            let thePhrase = realm.objects(Phrases).filter(predicate).first
+                try! realm.write {
+                   thePhrase!.phraseName = self.Name
+                   thePhrase!.language = self.language
+                   thePhrase!.gender = self.gender
+                }
+
+        }
+        editView.hidden = true
+    
+    }
+    
     /*
     // MARK: - Navigation
 

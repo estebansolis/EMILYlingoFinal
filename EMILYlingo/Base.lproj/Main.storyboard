@@ -225,6 +225,9 @@
                                                         <constraint firstAttribute="height" constant="7" id="mi4-hc-59O"/>
                                                     </constraints>
                                                     <state key="normal" image="edit-button"/>
+                                                    <connections>
+                                                        <action selector="editButton:" destination="RuD-Dq-jfI" eventType="touchUpInside" id="Nuz-9v-mgn"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="👩🇬🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAE-MQ-bOJ">
                                                     <rect key="frame" x="176" y="19" width="44" height="21"/>
@@ -264,6 +267,61 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36R-UX-uTe">
+                                <rect key="frame" x="0.0" y="220" width="296" height="166"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBD-X2-I5b">
+                                        <rect key="frame" x="7" y="17" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7x-VU-2aA">
+                                        <rect key="frame" x="7" y="75" width="57" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWH-gM-qiW">
+                                        <rect key="frame" x="7" y="46" width="81" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-z4-yLH">
+                                        <rect key="frame" x="112" y="117" width="34" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveActionButton:" destination="RuD-Dq-jfI" eventType="touchUpInside" id="6TU-TX-nZY"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-7L-pZX">
+                                        <rect key="frame" x="157" y="84" width="71" height="29"/>
+                                        <segments>
+                                            <segment title=" 👩"/>
+                                            <segment title="👱"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ym-Me-e0u">
+                                        <rect key="frame" x="144" y="8" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWb-dc-jGj">
+                                        <rect key="frame" x="144" y="46" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-io-GgG">
+                                        <rect key="frame" x="219" y="117" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelActionButton:" destination="RuD-Dq-jfI" eventType="touchUpInside" id="uA7-gX-Dec"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hND-Se-XHZ">
                                 <rect key="frame" x="0.0" y="460" width="320" height="108"/>
                                 <subviews>
@@ -360,12 +418,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelEditButton" destination="jMt-io-GgG" id="TZM-oG-uoM"/>
                         <outlet property="currentTimer" destination="Axz-cz-ZFy" id="NkR-i7-cdk"/>
+                        <outlet property="editView" destination="36R-UX-uTe" id="h07-9c-PbC"/>
                         <outlet property="forwardButton" destination="W5m-O6-Gdf" id="62N-1m-sVV"/>
+                        <outlet property="genderEditLabel" destination="U7x-VU-2aA" id="JPt-cD-mAr"/>
+                        <outlet property="genderEditSegment" destination="hAg-7L-pZX" id="C67-Wk-tWo"/>
+                        <outlet property="languageEditField" destination="mWb-dc-jGj" id="UX7-dy-1wm"/>
+                        <outlet property="languageEditLabel" destination="fWH-gM-qiW" id="JQr-nF-KFe"/>
+                        <outlet property="nameEditField" destination="2ym-Me-e0u" id="rvG-Rh-jot"/>
+                        <outlet property="nameEditLabel" destination="EBD-X2-I5b" id="6hD-hi-XCm"/>
                         <outlet property="phraseLabel" destination="vUC-DW-jjP" id="cmS-1x-W5e"/>
                         <outlet property="playPauseButton" destination="oT1-ce-F8u" id="bnE-xy-UAo"/>
                         <outlet property="progress" destination="hP8-Dn-DwS" id="KAa-48-hCK"/>
                         <outlet property="rewindButton" destination="RaM-uV-Kha" id="4sP-yd-72W"/>
+                        <outlet property="saveEditButton" destination="Fjg-z4-yLH" id="isB-rv-ZiU"/>
                         <outlet property="searchDisplayController" destination="Em7-5C-dyi" id="NfU-Lz-Kmg"/>
                         <outlet property="searchPhraseBar" destination="rbq-2F-67O" id="jX8-j7-TWP"/>
                         <outlet property="tableView" destination="HHN-2h-ZJb" id="bxd-W6-XtT"/>
