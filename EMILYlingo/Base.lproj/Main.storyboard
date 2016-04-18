@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="894" y="326"/>
         </scene>
-        <!--Phrases View Controller-->
+        <!--EMILYlingo-->
         <scene sceneID="45b-V9-XpR">
             <objects>
                 <viewController storyboardIdentifier="PhrasesViewController" id="RuD-Dq-jfI" customClass="PhrasesViewController" customModule="EMILYlingo" customModuleProvider="target" sceneMemberID="viewController">
@@ -414,7 +414,7 @@
                             <constraint firstItem="rbq-2F-67O" firstAttribute="leading" secondItem="HHN-2h-ZJb" secondAttribute="leading" id="zH4-0h-R7Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GH6-FF-TtT">
+                    <navigationItem key="navigationItem" title="EMILYlingo" id="GH6-FF-TtT">
                         <barButtonItem key="rightBarButtonItem" image="wave-icon" id="sp6-CY-9gY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

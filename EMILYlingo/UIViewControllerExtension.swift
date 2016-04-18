@@ -13,6 +13,7 @@ extension UIViewController {
     func setNavigationBarItem() {
         self.addLeftBarButtonWithImage(UIImage(named: "settings-icon")!)
         //self.addRightBarButtonWithImage(UIImage(named: "male")!)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 255/255.0)
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.removeRightGestures()
         self.slideMenuController()?.addLeftGestures()
