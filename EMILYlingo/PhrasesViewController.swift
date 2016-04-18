@@ -160,12 +160,13 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
         do {
             phraseLabel.text = label
-            if Int(duration) < 10 {
-                totalDuration.text = "0:0"+duration
-            }else{
-                totalDuration.text = "0:"+duration
-            }
-            //totalDuration.text = duration
+//            duration = Int((sound?.duration)!)
+//            if Int((sound?.duration)!) > 10 {
+//                totalDuration.text = "0:"+duration
+//            }else{
+//                totalDuration.text = "0:0"+duration
+//            }
+            totalDuration.text = duration
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
             sound!.play()
