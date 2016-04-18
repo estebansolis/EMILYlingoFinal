@@ -281,6 +281,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                    thePhrase!.language = self.language
                    thePhrase!.gender = self.gender
                 }
+            //self.tableView.reloadData()
 
         }
         editView.hidden = true

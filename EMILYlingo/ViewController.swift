@@ -159,7 +159,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 count = 1
                 tempTimer = timer
                 timer = 30
-                TimerLabel.text = String(timer)
+                TimerLabel.text = "0:"+String(timer)
                 TimerControl.invalidate()
                 RecordButton.setImage(image, forState: .Normal)
                 if(check == true){
@@ -273,7 +273,11 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     func countdown(){
         if(timer > 0){
             timer = timer - 1
-            TimerLabel.text = String(timer)
+            if(timer < 10){
+                TimerLabel.text = "0:0"+String(timer)
+            }else {
+                TimerLabel.text = "0:"+String(timer)
+            }
         }
     }
     
