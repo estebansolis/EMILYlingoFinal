@@ -57,6 +57,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
         navigationController!.navigationBar.barTintColor = UIColor(red:  240/255.0, green: 128/255.0, blue: 128/255.0, alpha: 100.0/100.0)
         editView.hidden = true
         let defaults = NSUserDefaults.standardUserDefaults()
