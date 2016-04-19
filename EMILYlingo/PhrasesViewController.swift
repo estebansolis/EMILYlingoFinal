@@ -55,6 +55,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         navigationController!.navigationBar.barTintColor = UIColor(red:  240/255.0, green: 128/255.0, blue: 128/255.0, alpha: 100.0/100.0)
         editView.hidden = true
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -86,7 +88,10 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     func sorting(){
         let defaults = NSUserDefaults.standardUserDefaults()
         if let sort = defaults.stringForKey("Sorting"){
@@ -253,11 +258,13 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func editButton(sender: AnyObject) {
         editView.hidden = false
+        self.view.endEditing(true)
     }
     
 
     @IBAction func cancelActionButton(sender: AnyObject) {
         editView.hidden = true
+        self.view.endEditing(true)
     }
     
 

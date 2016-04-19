@@ -66,6 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.barTintColor = UIColor(red:  0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 100.0/100.0)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
