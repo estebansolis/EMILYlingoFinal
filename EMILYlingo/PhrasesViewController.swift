@@ -83,11 +83,13 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 //        dictionary["gender"] = "male"
 //        phrases.append(Phrases(dictionary: dictionary)!)
         
-        //sorting()
+       
         loadPhrases()
+        //sorting()
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
+
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -96,12 +98,12 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         let defaults = NSUserDefaults.standardUserDefaults()
         if let sort = defaults.stringForKey("Sorting"){
             if(sort == "By Date"){
-                //phrases.reverse()
-                //tableView.reloadData();
+                phrases.sort()
+               // tableView.reloadData();
             }
             if(sort == "Alphabetically"){
-                phrases.sortInPlace({ $0.phraseName > $1.phraseName })
-                //tableView.reloadData();
+                phrases.sortInPlace({ $0.phraseName < $1.phraseName })
+               // tableView.reloadData();
             }
         }
     }
@@ -138,6 +140,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         if(searchActive){
             cell.phrase = filtered[indexPath.row]
         }else {
+            sorting()
             cell.phrase = phrases[indexPath.row]
         }
         
