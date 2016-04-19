@@ -158,7 +158,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vE6-3o-B5y">
-                        <barButtonItem key="leftBarButtonItem" title="-" id="2BB-tc-3b1">
+                        <barButtonItem key="leftBarButtonItem" image="list-button" id="2BB-tc-3b1">
+                            <color key="tintColor" red="0.98935041019171388" green="1" blue="0.96022930938336837" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="RuD-Dq-jfI" kind="push" id="8Bh-zb-Xbc"/>
                             </connections>
@@ -607,6 +608,7 @@
         <image name="Save" width="70" height="70"/>
         <image name="back-button" width="50" height="50"/>
         <image name="forward-button" width="50" height="50"/>
+        <image name="list-button" width="28" height="19"/>
         <image name="play-button" width="50" height="50"/>
         <image name="recordOff" width="70" height="70"/>
         <image name="wave-icon" width="28" height="16"/>
