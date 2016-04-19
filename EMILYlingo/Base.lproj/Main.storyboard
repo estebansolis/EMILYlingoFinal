@@ -110,7 +110,7 @@
                                     <constraint firstItem="Wsy-6R-Ukv" firstAttribute="top" secondItem="hw2-bS-hBU" secondAttribute="bottom" constant="18" id="zFJ-Q7-7Wf"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-l4-wh1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-l4-wh1">
                                 <rect key="frame" x="149" y="443" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,12 +130,12 @@
                                     <action selector="discardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7s-uo-Ooi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-DV-z7t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-DV-z7t">
                                 <rect key="frame" x="125" y="472" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Ghm-Ry-NzA"/>
                                 </constraints>
-                                <state key="normal" image="RecordOff.png"/>
+                                <state key="normal" image="recordOff"/>
                                 <connections>
                                     <action selector="RecordAndStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9t-vM-hdG"/>
                                 </connections>
@@ -604,11 +604,11 @@
     </scenes>
     <resources>
         <image name="Discard" width="70" height="70"/>
-        <image name="RecordOff.png" width="64" height="64"/>
         <image name="Save" width="70" height="70"/>
         <image name="back-button" width="50" height="50"/>
         <image name="forward-button" width="50" height="50"/>
         <image name="play-button" width="50" height="50"/>
+        <image name="recordOff" width="70" height="70"/>
         <image name="wave-icon" width="28" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>

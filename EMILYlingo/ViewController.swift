@@ -284,6 +284,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueIdentifer"{
+            let date = NSDate()
+            let datesFormatter = NSDateFormatter()
+           // datesFormatter.dateFormat = "M:dd:hh:mm"
+            datesFormatter.dateFormat = "MM:dd:hh:mm"
             saveView.hidden = true
             RecordButton.hidden = false
             TimerLabel.hidden = false
@@ -308,6 +312,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 }
                 let audioFileName = audioURL.lastPathComponent
                 dictionary["url"] = audioFileName
+                dictionary["date"] = datesFormatter.stringFromDate(date)
                 var phrase: Phrases!
                 phrase = Phrases(dictionary: dictionary)
                 destination.phrase = phrase

@@ -17,8 +17,8 @@
 		5FBB237B1CADD3DC00F59715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBB23791CADD3DC00F59715 /* LaunchScreen.storyboard */; };
 		5FBB23861CADD3DC00F59715 /* EMILYlingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23851CADD3DC00F59715 /* EMILYlingoTests.swift */; };
 		5FBB23911CADD3DC00F59715 /* EMILYlingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */; };
-		8375DD411CC6C48E0066EED9 /* recordingOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8375DD3F1CC6C48E0066EED9 /* recordingOn.png */; };
-		8375DD421CC6C48E0066EED9 /* recordOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8375DD401CC6C48E0066EED9 /* recordOff.png */; };
+		5FD706CE1CC6DEA0004D9FFF /* recordingOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD706CD1CC6DEA0004D9FFF /* recordingOn.png */; };
+		5FD706D01CC6DEAD004D9FFF /* recordOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD706CF1CC6DEAD004D9FFF /* recordOff.png */; };
 		EE2FA05B1CBEE18B00710594 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05A1CBEE18B00710594 /* LeftViewController.swift */; };
 		EE2FA0611CBEF22300710594 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05E1CBEF22300710594 /* StringExtension.swift */; };
 		EE2FA0621CBEF22300710594 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05F1CBEF22300710594 /* UITableViewExtension.swift */; };
@@ -64,8 +64,8 @@
 		5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMILYlingoUITests.swift; sourceTree = "<group>"; };
 		5FBB23921CADD3DC00F59715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FBB9A6A1CADDCA200673D84 /* EMILYlingo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMILYlingo-Bridging-Header.h"; sourceTree = "<group>"; };
-		8375DD3F1CC6C48E0066EED9 /* recordingOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recordingOn.png; sourceTree = "<group>"; };
-		8375DD401CC6C48E0066EED9 /* recordOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recordOff.png; sourceTree = "<group>"; };
+		5FD706CD1CC6DEA0004D9FFF /* recordingOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingOn.png; path = Assets.xcassets/recordingOn.imageset/recordingOn.png; sourceTree = "<group>"; };
+		5FD706CF1CC6DEAD004D9FFF /* recordOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordOff.png; path = Assets.xcassets/recordOff.imageset/recordOff.png; sourceTree = "<group>"; };
 		AB3020E61C59B24E2A80E79E /* Pods-EMILYlingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMILYlingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.release.xcconfig"; sourceTree = "<group>"; };
 		EE2FA05A1CBEE18B00710594 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		EE2FA05E1CBEF22300710594 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 				5FBB237C1CADD3DC00F59715 /* Info.plist */,
 				5FBB23741CADD3DB00F59715 /* EMILYlingo.xcdatamodeld */,
 				5FBB9A6A1CADDCA200673D84 /* EMILYlingo-Bridging-Header.h */,
-				8375DD3F1CC6C48E0066EED9 /* recordingOn.png */,
-				8375DD401CC6C48E0066EED9 /* recordOff.png */,
+				5FD706CD1CC6DEA0004D9FFF /* recordingOn.png */,
+				5FD706CF1CC6DEAD004D9FFF /* recordOff.png */,
 			);
 			path = EMILYlingo;
 			sourceTree = "<group>";
@@ -332,8 +332,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8375DD411CC6C48E0066EED9 /* recordingOn.png in Resources */,
-				8375DD421CC6C48E0066EED9 /* recordOff.png in Resources */,
+				5FD706CE1CC6DEA0004D9FFF /* recordingOn.png in Resources */,
+				5FD706D01CC6DEAD004D9FFF /* recordOff.png in Resources */,
 				EEF8E0011CB6FA3C0091317B /* Main.storyboard in Resources */,
 				5FBB237B1CADD3DC00F59715 /* LaunchScreen.storyboard in Resources */,
 				5FBB23781CADD3DB00F59715 /* Assets.xcassets in Resources */,

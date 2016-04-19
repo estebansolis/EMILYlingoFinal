@@ -16,7 +16,7 @@ class Phrases: Object {
     dynamic var flag : String?
     dynamic var gender : String?
     dynamic var url: String?
-    
+    dynamic var currentDate: String?
     
      convenience init(dictionary: NSDictionary){
         self.init()
@@ -58,6 +58,13 @@ class Phrases: Object {
             url = link
         }else {
             url = "/fkda/dfjiad"
+        }
+        let date = dictionary["date"] as? String
+        if date != nil{
+            currentDate = date
+        }
+        else{
+            currentDate = "0"
         }
     }
     
