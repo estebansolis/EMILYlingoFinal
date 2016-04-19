@@ -99,7 +99,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         let defaults = NSUserDefaults.standardUserDefaults()
         if let sort = defaults.stringForKey("Sorting"){
             if(sort == "By Date"){
-                phrases.sort()
+//                phrases.sort()
                // tableView.reloadData();
             }
             if(sort == "Alphabetically"){
