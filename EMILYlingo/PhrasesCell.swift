@@ -27,11 +27,14 @@ class PhrasesCell: UITableViewCell {
             else{
                 value = "👩"
             }
-            if(phrase.flag == "syria"){
-                value += "🇸🇾"
-            }
-            else{
+            if(phrase.language == "Greek" || phrase.language == "greek"){
                 value += "🇬🇷"
+            }
+            if(phrase.language == "English" || phrase.language == "english"){
+                value += "🇺🇸"
+            }
+            if(phrase.language == "Arabic" || phrase.language == "arabic"){
+                value += "🇹🇷"
             }
             
             emojiLabel.text = value

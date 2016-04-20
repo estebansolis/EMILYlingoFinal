@@ -304,9 +304,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 switch genderField.selectedSegmentIndex
                 {
                 case 0:
-                    dictionary["gender"] = "male"
-                case 1:
                     dictionary["gender"] = "female"
+                case 1:
+                    dictionary["gender"] = "male"
                 default:
                     break;
                 }

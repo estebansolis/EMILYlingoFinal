@@ -263,7 +263,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">
@@ -410,8 +410,8 @@
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hP8-Dn-DwS">
                                         <rect key="frame" x="42" y="17" width="234" height="2"/>
                                     </progressView>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-tj-kxJ">
-                                        <rect key="frame" x="9" y="96" width="305" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-tj-kxJ">
+                                        <rect key="frame" x="56" y="98" width="209" height="31"/>
                                         <connections>
                                             <action selector="volume:" destination="RuD-Dq-jfI" eventType="valueChanged" id="Jyj-j7-gd6"/>
                                         </connections>
@@ -428,9 +428,11 @@
                                     <constraint firstItem="vUC-DW-jjP" firstAttribute="top" secondItem="hP8-Dn-DwS" secondAttribute="bottom" constant="19" id="Hfo-Yj-IqV"/>
                                     <constraint firstItem="oT1-ce-F8u" firstAttribute="leading" secondItem="RaM-uV-Kha" secondAttribute="trailing" constant="67" id="Mhd-b0-4DP"/>
                                     <constraint firstItem="Axz-cz-ZFy" firstAttribute="centerY" secondItem="P6H-mf-x8k" secondAttribute="centerY" id="N9H-jz-HHB"/>
+                                    <constraint firstAttribute="trailing" secondItem="LIk-tj-kxJ" secondAttribute="trailing" constant="57" id="QWf-eh-V4g"/>
                                     <constraint firstItem="Axz-cz-ZFy" firstAttribute="top" secondItem="hND-Se-XHZ" secondAttribute="top" constant="7" id="UUX-TV-Mf9"/>
                                     <constraint firstAttribute="trailing" secondItem="P6H-mf-x8k" secondAttribute="trailing" constant="8" id="aCT-sr-ws8"/>
                                     <constraint firstItem="vUC-DW-jjP" firstAttribute="centerX" secondItem="hND-Se-XHZ" secondAttribute="centerX" id="e25-13-NGt"/>
+                                    <constraint firstItem="LIk-tj-kxJ" firstAttribute="leading" secondItem="hND-Se-XHZ" secondAttribute="leading" constant="58" id="jLA-tX-nIX"/>
                                     <constraint firstItem="W5m-O6-Gdf" firstAttribute="leading" secondItem="oT1-ce-F8u" secondAttribute="trailing" constant="68" id="mGk-RU-tRH"/>
                                     <constraint firstAttribute="height" constant="136" id="otw-9A-Hy9"/>
                                     <constraint firstItem="vUC-DW-jjP" firstAttribute="centerX" secondItem="oT1-ce-F8u" secondAttribute="centerX" id="pOU-ou-5UM"/>

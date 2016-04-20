@@ -205,12 +205,22 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             let cell = self.phrases[row]
             self.editUrl = cell.url!
             self.editView.hidden = false
-            //
+      
      
 
     })
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            let row = indexPath.row
+            let cell = self.phrases[row]
+            self.phrases.removeAtIndex(row)
+            try! self.realm.write {
+                self.realm.delete(cell)
+            }
+            tableView.reloadData()
+            
+        })
     
-        return [editAction]
+        return [editAction,deleteAction]
     }
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
