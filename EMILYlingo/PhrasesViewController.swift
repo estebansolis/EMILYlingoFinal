@@ -26,6 +26,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var searchActive : Bool = false
     var filtered:[Phrases] = []
+
     
     @IBOutlet weak var searchPhraseBar: UISearchBar!
     @IBOutlet weak var phraseLabel: UILabel!
@@ -54,6 +55,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     var language: String?
     var gender: String?
     var editUrl: String?
+    let mySpecialNotificationKey = "changeData"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         editView.hidden = true
         //volumeSlider.frame = CGRect(x: 9, y: 36, width: 305, height: 1)
         self.volumeSlider.setThumbImage(UIImage(named: "slider"), forState: UIControlState.Normal)
+        searchPhraseBar.delegate = self
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
             if(language == "English"){
@@ -80,14 +83,15 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         tableView.sectionHeaderHeight = 0
-        searchPhraseBar.delegate = self
+        
 //        dictionary["phraseName"] = "Sit Down"
 //        dictionary["language"] = "Arabic"
 //        dictionary["time"] = "5"
 //        dictionary["flag"] = "usflag"
 //        dictionary["gender"] = "male"
 //        phrases.append(Phrases(dictionary: dictionary)!)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadData", name: mySpecialNotificationKey, object: nil)
+
        
         loadPhrases()
         //sorting()
@@ -99,6 +103,13 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    func reloadData(){
+        tableView.reloadData()
+        viewDidLoad()
+       // searchPhraseBar.()
+    }
+    
     func sorting(){
         let defaults = NSUserDefaults.standardUserDefaults()
         if let sort = defaults.stringForKey("Sorting"){
@@ -117,6 +128,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        searchPhraseBar.delegate = self
         self.setNavigationBarItem()
     }
 

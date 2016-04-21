@@ -22,7 +22,8 @@ class LeftViewController: UIViewController {
     var phrases = [Phrases]()
     
     let defaults = NSUserDefaults.standardUserDefaults()
-
+    let mySpecialNotificationKey = "changeData"
+    
     var mainViewController: UIViewController!
     
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class LeftViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     func loadPhrases(){
         let ph = realm.objects(Phrases)
         
@@ -43,28 +44,33 @@ class LeftViewController: UIViewController {
     
     @IBAction func changeEnglish(sender: AnyObject) {
         defaults.setObject("English", forKey: "Language")
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
     
 
     @IBAction func changeSpanish(sender: AnyObject) {
         defaults.setObject("Turkish", forKey: "Language")
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
     
     @IBAction func changeArabic(sender: AnyObject) {
         defaults.setObject("Greek", forKey: "Language")
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
 
     
     @IBAction func sortByDate(sender: AnyObject) {
         defaults.setObject("By Date", forKey: "Sorting")
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
     
     @IBAction func sortAlphabetically(sender: AnyObject) {
         defaults.setObject("Alphabetically", forKey: "Sorting")
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
     /*
