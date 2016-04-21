@@ -190,6 +190,9 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             sound!.play()
             NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
             // sound.pause()
+            let image = UIImage(named: "slider.png")
+            playPauseButton.setImage(image, forState: .Normal)
+            count = 1
             
         } catch let error as NSError {
             print(error)
@@ -252,17 +255,21 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func playButtonAction(sender: AnyObject) {
         if(count == 1){
-            count = 2
             if((sound?.play()) != nil)
             {
+                count = 2
+                let image = UIImage(named: "play-button.png")
                 sound!.pause()
+                playPauseButton.setImage(image, forState: .Normal)
             }
         }
         else{
-            count = 1
             if((sound?.play()) != nil)
             {
+                count = 1
+                let image = UIImage(named: "slider.png")
                 sound!.play()
+                playPauseButton.setImage(image, forState: .Normal)
             }
         }
     }

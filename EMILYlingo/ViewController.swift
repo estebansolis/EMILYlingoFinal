@@ -279,6 +279,20 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }else {
                 TimerLabel.text = "0:"+String(timer)
             }
+        }else {
+            if let image = UIImage(named: "RecordOff.png") {
+                //plot?.pauseDrawing()
+                count = 1
+                tempTimer = timer
+                timer = 30
+                TimerLabel.text = "0:"+String(timer)
+                TimerControl.invalidate()
+                RecordButton.setImage(image, forState: .Normal)
+                if(check == true){
+                    finishRecording()
+                }
+            }
+
         }
     }
     
