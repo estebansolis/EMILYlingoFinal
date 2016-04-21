@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "slider-icon.png",
+      "filename" : "audio-higher.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "slider_2x.png",
+      "filename" : "audio-higher_2x.png",
       "scale" : "2x"
     },
     {
