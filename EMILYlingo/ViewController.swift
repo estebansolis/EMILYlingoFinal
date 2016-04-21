@@ -71,8 +71,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
             if(language == "English"){
-                saveButton.setTitle("Save", forState: .Normal)
-                cancelButton.setTitle("Cancel", forState: .Normal)
+                //saveButton.setTitle("Save", forState: .Normal)
+                //cancelButton.setTitle("Cancel", forState: .Normal)
                 savePhraseButton.setTitle("Save", forState: .Normal)
                 cancelPhraseButton.setTitle("Cancel", forState: .Normal)
                 nameLabel.text = "Name:"
@@ -81,8 +81,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 
             }
             if(language == "Turkish"){
-                saveButton.setTitle("Kaydet", forState: .Normal)
-                cancelButton.setTitle("Iptal", forState: .Normal)
+                //saveButton.setTitle("Kaydet", forState: .Normal)
+                //cancelButton.setTitle("Iptal", forState: .Normal)
                 savePhraseButton.setTitle("Kaydet", forState: .Normal)
                 cancelPhraseButton.setTitle("Iptal", forState: .Normal)
                 nameLabel.text = "Isim:"
@@ -90,8 +90,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 genderLabel.text = "Cinsiyet:"
             }
             if(language == "Greek"){
-                saveButton.setTitle("αποθηκεύσετε", forState: .Normal)
-                cancelButton.setTitle("ματαίωση", forState: .Normal)
+                //saveButton.setTitle("αποθηκεύσετε", forState: .Normal)
+                //cancelButton.setTitle("ματαίωση", forState: .Normal)
                 savePhraseButton.setTitle("αποθηκεύσετε", forState: .Normal)
                 cancelPhraseButton.setTitle("ματαίωση", forState: .Normal)
                 nameLabel.text = "Όνομα:"

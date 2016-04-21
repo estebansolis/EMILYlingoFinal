@@ -23,6 +23,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     var count = 1
     var sound: AVAudioPlayer?
     var index: Int!
+    var indexPathToInt: NSIndexPath!
     
     var searchActive : Bool = false
     var filtered:[Phrases] = []
@@ -170,6 +171,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         let row = indexPath.row;
+        indexPathToInt = indexPath
         let cell = phrases[row]
         let toAppendString = cell.url!
         let label = cell.phraseName!
@@ -329,35 +331,36 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func forwardAction(sender: AnyObject) {
-        if(index+1 == phrases.count+1){
-        let cell = phrases[index+1]
-        index = index+1
-        let toAppendString = cell.url!
-        let label = cell.phraseName!
-        let duration = cell.time!
-        let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
-        do {
-            phraseLabel.text = label
-            //            duration = Int((sound?.duration)!)
-            //            if Int((sound?.duration)!) > 10 {
-            //                totalDuration.text = "0:"+duration
-            //            }else{
-            //                totalDuration.text = "0:0"+duration
-            //            }
-            totalDuration.text = duration
-            sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
-            audioPlayer = sound
-            sound!.play()
-            NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
-            // sound.pause()
-            
-        } catch let error as NSError {
-            print(error)
+        if(sound?.play() != nil){
+            if(index+1 <= phrases.count-1){
+                let cell = phrases[index+1]
+                index = index+1
+                let toAppendString = cell.url!
+                let label = cell.phraseName!
+                let duration = cell.time!
+                let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+                soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
+                do {
+                    phraseLabel.text = label
+                    //            duration = Int((sound?.duration)!)
+                    //            if Int((sound?.duration)!) > 10 {
+                    //                totalDuration.text = "0:"+duration
+                    //            }else{
+                    //                totalDuration.text = "0:0"+duration
+                    //            }
+                    totalDuration.text = duration
+                    sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
+                    audioPlayer = sound
+                    sound!.play()
+                    NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
+                    // sound.pause()
+                    
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+
         }
-        }
-        
-        
     }
     
     @IBAction func volume(sender: AnyObject) {
@@ -365,35 +368,39 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func rewindAction(sender: AnyObject) {
-        if(index-1 == 0){
-            print ("this is index \(index)")
-        let cell = phrases[index-1]
-        index = index-1
-        let toAppendString = cell.url!
-        let label = cell.phraseName!
-        let duration = cell.time!
-        let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
-        do {
-            phraseLabel.text = label
-            //            duration = Int((sound?.duration)!)
-            //            if Int((sound?.duration)!) > 10 {
-            //                totalDuration.text = "0:"+duration
-            //            }else{
-            //                totalDuration.text = "0:0"+duration
-            //            }
-            totalDuration.text = duration
-            sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
-            audioPlayer = sound
-            sound!.play()
-            NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
-            // sound.pause()
-            
-        } catch let error as NSError {
-            print(error)
-        }
-        }
+        if(sound?.play() != nil){
+            if(index-1 >= 0){
+                print ("this is index \(index)")
+                let cell = phrases[index-1]
+                index = index-1
+                //let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPathToInt)!
+                //selectedCell.contentView.backgroundColor = UIColor(red:  245/255.0, green: 183/255.0, blue: 177/255.0, alpha: 100.0/100.0)
+                let toAppendString = cell.url!
+                let label = cell.phraseName!
+                let duration = cell.time!
+                let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+                soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
+                do {
+                    phraseLabel.text = label
+                    //            duration = Int((sound?.duration)!)
+                    //            if Int((sound?.duration)!) > 10 {
+                    //                totalDuration.text = "0:"+duration
+                    //            }else{
+                    //                totalDuration.text = "0:0"+duration
+                    //            }
+                    totalDuration.text = duration
+                    sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
+                    audioPlayer = sound
+                    sound!.play()
+                    NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
+                    // sound.pause()
+                    
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
 
+        }
     }
     /*
     // MARK: - Navigation
