@@ -168,6 +168,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         let row = indexPath.row;
         let cell = phrases[row]
         let toAppendString = cell.url!
@@ -184,6 +185,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 //            }else{
 //                totalDuration.text = "0:0"+duration
 //            }
+            selectedCell.contentView.backgroundColor = UIColor(red:  245/255.0, green: 183/255.0, blue: 177/255.0, alpha: 100.0/100.0)
             totalDuration.text = duration
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
             audioPlayer = sound
