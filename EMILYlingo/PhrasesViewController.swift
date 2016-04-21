@@ -190,7 +190,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             sound!.play()
             NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
             // sound.pause()
-            let image = UIImage(named: "slider.png")
+            let image = UIImage(named: "pause-button.png")
             playPauseButton.setImage(image, forState: .Normal)
             count = 1
             
@@ -267,7 +267,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             if((sound?.play()) != nil)
             {
                 count = 1
-                let image = UIImage(named: "slider.png")
+                let image = UIImage(named: "pause-button.png")
                 sound!.play()
                 playPauseButton.setImage(image, forState: .Normal)
             }
