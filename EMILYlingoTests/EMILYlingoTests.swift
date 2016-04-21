@@ -10,9 +10,12 @@ import XCTest
 @testable import EMILYlingo
 
 class EMILYlingoTests: XCTestCase {
-    
+    var vc: ViewController!
     override func setUp() {
         super.setUp()
+        
+        //let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        //  vc = storyboard.instantiateInitialViewController() as! ViewController
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -32,5 +35,49 @@ class EMILYlingoTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    //func testSize(){
+    //func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string:String) -> Bool {
+    //let maxLength = 16
+    //let currentString: NSString = textField.text!
+    //let newString: NSString = currentString.stringByReplacingCharactersInRange(range, withString: string)
+    //return newString.length <= maxLength
+    //}
+    
+    //let s = vs.textField(
+    
+    //}
+    
+    func testLabel(){
+        let rand = String.random(8)
+        let num = rand.characters.count
+        XCTAssert(num == 8)
+    }
+    
+    func testDefaultMetaData(){
+        var dictionary: NSDictionary
+        dictionary = [:]
+        let phrases = Phrases(dictionary: dictionary)
+        
+        XCTAssertEqual(phrases.phraseName, "Esteban")
+        XCTAssertEqual(phrases.language, "English")
+        XCTAssertEqual(phrases.time, "0")
+        XCTAssertEqual(phrases.flag, "0")
+        XCTAssertEqual(phrases.gender, "Male")
+        XCTAssertEqual(phrases.url, "/fkda/dfjiad")
+    }
+    
+    func testCustomMetaData(){
+        var dictionary: NSDictionary
+        dictionary = ["phraseName": "Howdy", "language": "Texan", "time": "12", "flag": "Texas", "gender": "Male", "url": "/qwe/qwerty"]
+        let phrases = Phrases(dictionary: dictionary)
+        
+        XCTAssertEqual(phrases.phraseName, "Howdy")
+        XCTAssertEqual(phrases.language, "Texan")
+        XCTAssertEqual(phrases.time, "12")
+        XCTAssertEqual(phrases.flag, "Texas")
+        XCTAssertEqual(phrases.gender, "Male")
+        XCTAssertEqual(phrases.url, "/qwe/qwerty")
+    }
+    
     
 }

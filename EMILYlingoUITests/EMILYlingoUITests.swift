@@ -9,7 +9,7 @@
 import XCTest
 
 class EMILYlingoUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -19,7 +19,7 @@ class EMILYlingoUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
@@ -29,116 +29,151 @@ class EMILYlingoUITests: XCTestCase {
     }
     
     func testRecord() {
-        let app = XCUIApplication()
-        
-        sleep(2)
-        
-        //Lead to Recording screen
-        let toRecordScreenButton = app.navigationBars["EMILYlingo.PhrasesView"].buttons["Item"]
-        toRecordScreenButton.tap()
-        
-        //Start Recording, wait for 5 seconds
-        sleep(2)
-        let recordButtonStart = app.buttons["RecordOff"]
-        recordButtonStart.tap()
-        
-        sleep(5)
-        
-        //Stop the Recording, leading to save screen
-        let recordButtonStop = app.buttons["RecordingOn"]
-        recordButtonStop.tap()
-        sleep(2)
-        
-        //Once Recording is done, agree to save by 'Save' Button
-        let agreeButton = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
-        agreeButton.tap()
-        if(agreeButton.childrenMatchingType(.Button)["Save"].exists)
-        {
-            agreeButton.childrenMatchingType(.Button)["Save"].tap()
-        }
-        else if(agreeButton.childrenMatchingType(.Button)["abroar"].exists)
-        {
-            agreeButton.childrenMatchingType(.Button)["abroar"].tap()
-        }
-        
-        sleep(2)
-        
-        let fieldBox = agreeButton.childrenMatchingType(.Other).elementBoundByIndex(1)
-        fieldBox.childrenMatchingType(.TextField).elementBoundByIndex(0).tap()
-        fieldBox.childrenMatchingType(.TextField).elementBoundByIndex(0).typeText("yoyoyo")
-        
-        let textField = fieldBox.childrenMatchingType(.TextField).elementBoundByIndex(1)
-        app.buttons["👩"].tap()
-        textField.tap()
-        //textField.tap()
-        fieldBox.childrenMatchingType(.TextField).elementBoundByIndex(1).typeText("Polish")
-        //Debug fails to enter language.
-        //app.buttons["👩"].tap()
-        fieldBox.buttons["Save"].tap()
-        
-        sleep(2)
-    }
-    
-    func testSwapLanguage() {
-        
-        let app = XCUIApplication()
-        
-        
-        let buttonLanguage = app.navigationBars["EMILYlingo.PhrasesView"].childrenMatchingType(.Button).elementBoundByIndex(0)
-        sleep(1)
-        buttonLanguage.tap()
-        app.buttons["English"].tap()
-        sleep(1)
-        buttonLanguage.tap()
-        app.buttons["Spanish"].tap()
-        sleep(1)
-        buttonLanguage.tap()
-        app.buttons["Arabic"].tap()
-        sleep(1)
-        buttonLanguage.tap()
-        app.buttons["English"].tap()
-        sleep(1)
-    }
-    
-    func testRecordReject() {
         
         let app = XCUIApplication()
         
         //To Recording Screen
-        app.navigationBars["EMILYlingo.PhrasesView"].buttons["Item"].tap()
-        sleep(1)
-        
-        //Set Recording
+        app.navigationBars["EMILYlingo"].buttons["wave icon"].tap()
         app.buttons["RecordOff"].tap()
-        sleep(3)
+        sleep(5)
         app.buttons["RecordingOn"].tap()
-        
-        //Choose to save
-        let agreeButton = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
-        agreeButton.childrenMatchingType(.Button)["Save"].tap()
-        sleep(1)
-        
-        //Reject and Head Back
-        agreeButton.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["Cancel"].tap()
-        sleep(1)
-        app.navigationBars["EMILYlingo.View"].buttons["-"].tap()
         sleep(2)
+        
+        //Agree on Recording
+        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+        
+        if(element.childrenMatchingType(.Button)["Save"].exists)
+        {
+            element.childrenMatchingType(.Button)["Save"].tap()
+        }
+        else if(element.childrenMatchingType(.Button)["αποθηκεύσετε"].exists)
+        {
+            element.childrenMatchingType(.Button)["αποθηκεύσετε"].tap()
+        }
+        else if(element.childrenMatchingType(.Button)["Kaydet"].exists)
+        {
+            element.childrenMatchingType(.Button)["Kaydet"].tap()
+        }
+        
+        //Fill Meta-Data
+        let element2 = element.childrenMatchingType(.Other).elementBoundByIndex(1)
+        element2.childrenMatchingType(.TextField).elementBoundByIndex(0).tap()
+        element2.childrenMatchingType(.TextField).elementBoundByIndex(0).typeText("Please Sit Down")
+        let textField = element2.childrenMatchingType(.TextField).elementBoundByIndex(1)
+        textField.tap()
+        element2.childrenMatchingType(.TextField).elementBoundByIndex(1).typeText("Arabic")
+        app.buttons["👱"].tap()
+        
+        //Save
+        if(element2.buttons["Save"].exists)
+        {
+            element2.buttons["Save"].tap()
+        }
+        else if(element2.buttons["αποθηκεύσετε"].exists)
+        {
+            element2.buttons["αποθηκεύσετε"].tap()
+        }
+        else if(element2.buttons["Kaydet"].exists)
+        {
+            element2.buttons["Kaydet"].tap()
+        }
         
     }
     
-    func testSetSort() {
+    func testLangSwap(){
         
         let app = XCUIApplication()
-        let buttonSort = app.navigationBars["EMILYlingo.PhrasesView"].childrenMatchingType(.Button).elementBoundByIndex(0)
-        sleep(2)
-        buttonSort.tap()
-        app.buttons["Alphabetically"].tap()
-        sleep(2)
-        buttonSort.tap()
-        app.buttons["By Date"].tap()
-        sleep(2)
+        let settingsIconButton = app.navigationBars["EMILYlingo"].buttons["settings icon"]
+        settingsIconButton.tap()
+        app.buttons["English"].tap()
+        settingsIconButton.tap()
+        app.buttons["Turkish"].tap()
+        settingsIconButton.tap()
+        app.buttons["Greek"].tap()
         
     }
-
+    
+    func testCancelRecording(){
+        
+        let app = XCUIApplication()
+        
+        //To Recording Page
+        app.navigationBars["EMILYlingo"].buttons["wave icon"].tap()
+        
+        app.buttons["RecordOff"].tap()
+        sleep(2)
+        app.buttons["RecordingOn"].tap()
+        
+        //Agree to Recording
+        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+        if(element.childrenMatchingType(.Button)["Save"].exists)
+        {
+            element.childrenMatchingType(.Button)["Save"].tap()
+        }
+        else if(element.childrenMatchingType(.Button)["αποθηκεύσετε"].exists)
+        {
+            element.childrenMatchingType(.Button)["αποθηκεύσετε"].tap()
+        }
+        else if(element.childrenMatchingType(.Button)["Kaydet"].exists)
+        {
+            element.childrenMatchingType(.Button)["Kaydet"].tap()
+        }
+        
+        //Changed Mind lol
+        if(element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["ματαίωση"].exists)
+        {
+            element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["ματαίωση"].tap()
+        }
+        else if(element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["Iptal"].exists)
+        {
+            element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["Iptal"].tap()
+        }
+        else if(element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["Cancel"].exists)
+        {
+            element.childrenMatchingType(.Other).elementBoundByIndex(1).buttons["Cancel"].tap()
+        }
+        
+        app.navigationBars["EMILYlingo.View"].buttons["list button"].tap()
+        
+        sleep(3)
+        
+    }
+    
+    
+    func testPlayandPause(){
+        let staticText = XCUIApplication().tables.staticTexts["Please Sit Down"]
+        let playButtonButton = XCUIApplication().buttons["play button"]
+        staticText.tap()
+        sleep(1)
+        playButtonButton.tap()
+        sleep(1)
+        playButtonButton.tap()
+        sleep(5)
+    }
+    
+    func testSearch(){
+        //Run testRecording Before Running This
+        let app = XCUIApplication()
+        
+        if(app.searchFields["Έρευνα"].exists)
+        {
+            app.searchFields["Έρευνα"].tap()
+            app.searchFields["Έρευνα"].typeText("Please")
+        }
+        else if(app.searchFields["Search"].exists)
+        {
+            app.searchFields["Search"].tap()
+            app.searchFields["Search"].typeText("Please")
+        }
+        else if(app.searchFields["Arama"].exists)
+        {
+            app.searchFields["Arama"].tap()
+            app.searchFields["Arama"].typeText("Please")
+        }
+        app.tables.staticTexts["Please Sit Down"].tap()
+        sleep(7)
+    }
+    
+    
     
 }
