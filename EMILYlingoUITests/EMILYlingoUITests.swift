@@ -142,12 +142,13 @@ class EMILYlingoUITests: XCTestCase {
     
     func testPlayandPause(){
         let staticText = XCUIApplication().tables.staticTexts["Please Sit Down"]
-        let playButtonButton = XCUIApplication().buttons["play button"]
+        let app = XCUIApplication()
+
         staticText.tap()
         sleep(1)
-        playButtonButton.tap()
+        app.buttons["pause button"].tap()
         sleep(1)
-        playButtonButton.tap()
+        app.buttons["play button"].tap()
         sleep(5)
     }
     
