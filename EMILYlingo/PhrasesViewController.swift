@@ -108,7 +108,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     func reloadData(){
         tableView.reloadData()
         viewDidLoad()
-       // searchPhraseBar.()
+        
+        
     }
     
     func sorting(){

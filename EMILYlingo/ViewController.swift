@@ -9,15 +9,18 @@
 import UIKit
 import RealmSwift
 import AVFoundation
+import EZAudio
 
-class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate {//, EZMicrophoneDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate , EZMicrophoneDelegate {
     
     //------------------------------------------------------------------------------
     // MARK: Properties
     //------------------------------------------------------------------------------
     var phrases: Phrases!
-    //@IBOutlet weak var plot: EZAudioPlotGL?;
-    //var microphone: EZMicrophone!;
+    
+    @IBOutlet weak var navigationHam: UIBarButtonItem!
+    @IBOutlet var plot: EZAudioPlotGL!
+    var microphone: EZMicrophone!;
     @IBOutlet weak var RecordButton: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
@@ -71,8 +74,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
             if(language == "English"){
-                //saveButton.setTitle("Save", forState: .Normal)
-                //cancelButton.setTitle("Cancel", forState: .Normal)
                 savePhraseButton.setTitle("Save", forState: .Normal)
                 cancelPhraseButton.setTitle("Cancel", forState: .Normal)
                 nameLabel.text = "Name:"
@@ -81,8 +82,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 
             }
             if(language == "Turkish"){
-                //saveButton.setTitle("Kaydet", forState: .Normal)
-                //cancelButton.setTitle("Iptal", forState: .Normal)
                 savePhraseButton.setTitle("Kaydet", forState: .Normal)
                 cancelPhraseButton.setTitle("Iptal", forState: .Normal)
                 nameLabel.text = "Isim:"
@@ -90,8 +89,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 genderLabel.text = "Cinsiyet:"
             }
             if(language == "Greek"){
-                //saveButton.setTitle("αποθηκεύσετε", forState: .Normal)
-                //cancelButton.setTitle("ματαίωση", forState: .Normal)
                 savePhraseButton.setTitle("αποθηκεύσετε", forState: .Normal)
                 cancelPhraseButton.setTitle("ματαίωση", forState: .Normal)
                 nameLabel.text = "Όνομα:"
@@ -105,11 +102,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         saveButton.hidden = true
         saveView.hidden = true
     
-        
-        //microphone = EZMicrophone(delegate: self, startsImmediately: true);
-        //plot?.backgroundColor = UIColor.blackColor()
-        //let plotType: EZPlotType = EZPlotType.Buffer
-        //plot?.plotType = plotType
+        microphone = EZMicrophone(delegate: self, startsImmediately: true)
+        plot?.backgroundColor = UIColor.blackColor()
+        let plotTypes: EZPlotType = EZPlotType.Buffer
+        plot?.plotType = plotTypes
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -145,10 +141,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         if count == 1 {
             check = true
             if let image = UIImage(named: "RecordingOn.png") {
-                //plot?.shouldFill = true
-                //plot?.shouldMirror = true
-                //plot?.resumeDrawing()
-                
+                plot?.shouldFill = true
+                plot?.shouldMirror = true
+                plot?.resumeDrawing()
+                navigationHam.enabled = false
                 TimerControl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
                 count = 2
                 RecordButton.setImage(image, forState: .Normal)
@@ -156,7 +152,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "RecordOff.png") {
-                //plot?.pauseDrawing()
+                plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -172,6 +168,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     
     func finishRecording(){
         audioRecorder.stop()
+        navigationHam.enabled = false
         audioRecorder = nil
         RecordButton.hidden = true
         cancelButton.hidden = false
@@ -183,14 +180,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             let sound = try AVAudioPlayer(contentsOfURL: audioURL)
             audioPlayer = sound
             sound.play()
-            //RecordButton.enabled = false
-            //plot?.resumeDrawing()
+            RecordButton.enabled = false
+            plot?.resumeDrawing()
         }catch{
             
         }
-        //plot?.shouldMirror = false
-        //plot?.shouldFill = false
-        //plot?.clear()
+        plot?.shouldMirror = false
+        plot?.shouldFill = false
+        plot?.clear()
         
     }
     
@@ -213,10 +210,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             audioRecorder = try AVAudioRecorder(URL: audioURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
-            //let plotType: EZPlotType = EZPlotType.Buffer
-            //plot?.plotType = plotType;
-           // plot?.shouldFill = true
-            //plot?.shouldMirror = true
+         //   let plotType: EZPlotType = EZPlotType.Buffer
+          //  plot?.plotType = plotType;
+          //  plot?.shouldFill = true
+          //  plot?.shouldMirror = true
             
         }catch {
             finishRecording()
@@ -231,13 +228,34 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         saveButton.hidden = true
         cancelButton.hidden = true
         saveView.hidden = false
+       
+    /*  var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        plot.addSubview(blurEffectView)*/
+        
         
     }
     @IBAction func discardButton(sender: AnyObject) {
+        navigationHam.enabled = true
         cancelButton.hidden = true
         saveButton.hidden = true
         RecordButton.hidden = false
-        TimerLabel.hidden = false 
+        TimerLabel.hidden = false
+        RecordButton.enabled = true
+        do{
+            let sound = try AVAudioPlayer(contentsOfURL: audioURL)
+            audioPlayer = sound
+            sound.stop()
+            plot?.clear()
+           // plot?.redraw()
+            plot?.pauseDrawing()
+        }
+        catch{
+            
+        }
+        
     }
     @IBAction func saveButton(sender: AnyObject) {
       
@@ -264,6 +282,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         saveView.hidden = true
         RecordButton.hidden = false
         TimerLabel.hidden = false
+        RecordButton.enabled = true
+        navigationHam.enabled = true
     }
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
@@ -281,7 +301,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "RecordOff.png") {
-                //plot?.pauseDrawing()
+                plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -351,11 +371,11 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     // MARK: EZMicrophoneDelegate
     //------------------------------------------------------------------------------
     
-//    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
-//        });
-//    }
+    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+       dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+        });
+    }
     
 }
 
