@@ -47,6 +47,7 @@ class EMILYlingoTests: XCTestCase {
     
     //}
     
+    
     func testLabel(){
         let rand = String.random(8)
         let num = rand.characters.count
@@ -77,6 +78,34 @@ class EMILYlingoTests: XCTestCase {
         XCTAssertEqual(phrases.flag, "Texas")
         XCTAssertEqual(phrases.gender, "Male")
         XCTAssertEqual(phrases.url, "/qwe/qwerty")
+    }
+    
+    func testPhraseVersion(){
+        //PhrasesViewController.version()
+        let version = PhrasesViewController.version()
+        XCTAssert(0 == version)
+    }
+    
+    func testShouldGroupAccessibilityChildren(){
+        //PhrasesViewController.shouldGroupAccessibilityChildren()
+        let value = PhrasesViewController.shouldGroupAccessibilityChildren()
+        XCTAssert(value == false)
+    }
+    
+    func testPhraseViewControllerFunctions(){
+        PhrasesViewController.prepareForInterfaceBuilder()
+        PhrasesViewController.awakeFromNib()
+        PhrasesViewController.accessibilityActivate()
+        XCTAssert(PhrasesViewController.accessibilityActivate() == false)
+    }
+    
+    func testLeftViewControllerFuncytions(){
+        XCTAssert(LeftViewController.version() == 0)
+        XCTAssert(LeftViewController.shouldGroupAccessibilityChildren() == false)
+        LeftViewController.prepareForInterfaceBuilder()
+        XCTAssert(LeftViewController.isProxy() == false)
+        XCTAssert(LeftViewController.accessibilityActivate() == false)
+        
     }
     
     
