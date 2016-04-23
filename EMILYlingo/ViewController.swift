@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     func loadRecordingUI(){
         if count == 1 {
             check = true
-            if let image = UIImage(named: "RecordingOn.png") {
+            if let image = UIImage(named: "recordingOn.png") {
                 plot?.shouldFill = true
                 plot?.shouldMirror = true
                 plot?.resumeDrawing()
@@ -151,7 +151,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 startRecording()
             }
         }else {
-            if let image = UIImage(named: "RecordOff.png") {
+            if let image = UIImage(named: "recordOff.png") {
                 plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
