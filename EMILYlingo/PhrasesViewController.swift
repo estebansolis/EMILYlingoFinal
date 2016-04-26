@@ -246,6 +246,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         searchActive = true
     }
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchBar.text = "";
         searchActive = false
     }
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -315,6 +316,9 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
 
     @IBAction func saveActionButton(sender: AnyObject) {
+        //if(self.nameEditField.text != nil){
+            self.Name = self.nameEditField.text
+        //}
         self.Name = self.nameEditField.text
         self.language = self.languageEditField.text
         switch self.genderEditSegment.selectedSegmentIndex

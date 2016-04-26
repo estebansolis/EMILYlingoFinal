@@ -185,6 +185,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         check = false
         
         do {
+            let session = AVAudioSession.sharedInstance()
+            try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker)
             let sound = try AVAudioPlayer(contentsOfURL: audioURL)
             audioPlayer = sound
             sound.play()
