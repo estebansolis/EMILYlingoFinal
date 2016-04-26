@@ -19,8 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     var phrases: Phrases!
     
     @IBOutlet weak var navigationHam: UIBarButtonItem!
-    @IBOutlet var plot: EZAudioPlotGL!
-    var microphone: EZMicrophone!;
+    @IBOutlet weak var waveformView: SiriWaveformView!
+    //@IBOutlet var plot: EZAudioPlotGL!
+    //var microphone: EZMicrophone!;
     @IBOutlet weak var RecordButton: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
@@ -51,6 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     var count = 2
     var check = false;
     var TimerControl = NSTimer()
+    var isRecording = false;
     
     var dictionary: [String:String] = [
         "zero" : "zero"
@@ -70,6 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.barTintColor = UIColor(red:  0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 100.0/100.0)
+        waveformView.waveColor = UIColor.whiteColor()
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
@@ -102,10 +105,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         saveButton.hidden = true
         saveView.hidden = true
     
-        microphone = EZMicrophone(delegate: self, startsImmediately: true)
-        plot?.backgroundColor = UIColor.blackColor()
-        let plotTypes: EZPlotType = EZPlotType.Buffer
-        plot?.plotType = plotTypes
+//        microphone = EZMicrophone(delegate: self, startsImmediately: true)
+//        plot?.backgroundColor = UIColor.blackColor()
+//        let plotTypes: EZPlotType = EZPlotType.Buffer
+//        plot?.plotType = plotTypes
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -141,9 +144,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         if count == 1 {
             check = true
             if let image = UIImage(named: "recordingOn.png") {
-                plot?.shouldFill = true
-                plot?.shouldMirror = true
-                plot?.resumeDrawing()
+//                plot?.shouldFill = true
+//                plot?.shouldMirror = true
+//                plot?.resumeDrawing()
                 navigationHam.enabled = false
                 TimerControl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
                 count = 2
@@ -152,7 +155,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "recordOff.png") {
-                plot?.pauseDrawing()
+                //plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -167,6 +170,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     }
     
     func finishRecording(){
+        //isRecording = false
+        audioRecorder.meteringEnabled = false
         audioRecorder.stop()
         navigationHam.enabled = false
         audioRecorder = nil
@@ -181,13 +186,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             audioPlayer = sound
             sound.play()
             RecordButton.enabled = false
-            plot?.resumeDrawing()
+            //isRecording = false
+            //plot?.resumeDrawing()
         }catch{
             
         }
-        plot?.shouldMirror = false
-        plot?.shouldFill = false
-        plot?.clear()
+//        plot?.shouldMirror = false
+//        plot?.shouldFill = false
+//        plot?.clear()
         
     }
     
@@ -207,9 +213,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         ]
         
         do {
+            isRecording = true
             audioRecorder = try AVAudioRecorder(URL: audioURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
+            waveformView.waveColor = UIColor.whiteColor()
+            audioRecorder.meteringEnabled = true
+            let displayLink = CADisplayLink(target: self, selector: #selector(ViewController.updateMeters))
+            displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
          //   let plotType: EZPlotType = EZPlotType.Buffer
           //  plot?.plotType = plotType;
           //  plot?.shouldFill = true
@@ -217,6 +228,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             
         }catch {
             finishRecording()
+        }
+    }
+    
+    func updateMeters(){
+        if isRecording == true {
+            audioRecorder.updateMeters()
+            let normalizeValue = pow(10, audioRecorder.averagePowerForChannel(0)/20)
+            waveformView.updateWithLevel(CGFloat(normalizeValue))
         }
     }
     
@@ -248,9 +267,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             let sound = try AVAudioPlayer(contentsOfURL: audioURL)
             audioPlayer = sound
             sound.stop()
-            plot?.clear()
+            //plot?.clear()
            // plot?.redraw()
-            plot?.pauseDrawing()
+            //plot?.pauseDrawing()
         }
         catch{
             
@@ -301,7 +320,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "RecordOff.png") {
-                plot?.pauseDrawing()
+                //plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -371,11 +390,11 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     // MARK: EZMicrophoneDelegate
     //------------------------------------------------------------------------------
     
-    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-       dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
-        });
-    }
+//    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+//       dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+//        });
+//    }
     
 }
 

@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="EZAudioPlotGL">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SiriWaveformView" customModule="EMILYlingo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -177,15 +177,15 @@
                         <outlet property="nameField" destination="mzZ-Tn-gx4" id="1Qc-Mw-tCM"/>
                         <outlet property="nameLabel" destination="bBz-Rn-9eU" id="9vZ-iU-ohT"/>
                         <outlet property="navigationHam" destination="2BB-tc-3b1" id="ZGE-Y2-Na4"/>
-                        <outlet property="plot" destination="8bC-Xf-vdC" id="ey5-y7-ZAp"/>
                         <outlet property="saveButton" destination="n31-wG-kbN" id="dBy-3y-gML"/>
                         <outlet property="savePhraseButton" destination="Wsy-6R-Ukv" id="3TZ-ps-HSb"/>
                         <outlet property="saveView" destination="yca-UI-bRT" id="0AV-Yf-O0h"/>
+                        <outlet property="waveformView" destination="8bC-Xf-vdC" id="sY7-da-PY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="326"/>
+            <point key="canvasLocation" x="1000" y="311"/>
         </scene>
         <!--EMILYlingo-->
         <scene sceneID="45b-V9-XpR">
@@ -288,7 +288,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">

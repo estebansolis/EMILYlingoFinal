@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EZAudio.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-EMILYlingo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,40 +24,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TPCircularBuffer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>630A3F469E1A8B405B5870DD8091D195</key>
+		<key>256EEBF604EDAFA3B9DAE75D916A8568</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63957C3FC4B288814028F8B08D4DA01D</key>
+		<key>58BE9B80A9ECE72C73D2C11D006E3BAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B998D1794C76C66865824BD5511C74FF</key>
+		<key>DE53C4978EDEE6F1B0F3D3A8ED401DFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD8BAF2D7BCD1982E1F55441BEC26CBD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C765796FB370DE982DBF9B22ABC55D4A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC545DE1DCE459577AECF93605DBC89D</key>
+		<key>FD57A94A498C1EF7F7759BFEBF56C1A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

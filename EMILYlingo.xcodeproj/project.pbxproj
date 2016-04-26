@@ -23,6 +23,7 @@
 		EE2FA0611CBEF22300710594 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05E1CBEF22300710594 /* StringExtension.swift */; };
 		EE2FA0621CBEF22300710594 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05F1CBEF22300710594 /* UITableViewExtension.swift */; };
 		EE2FA0631CBEF22300710594 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA0601CBEF22300710594 /* UIViewControllerExtension.swift */; };
+		EEB9C0ED1CCFEC1D00C1EF92 /* SiriWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB9C0EC1CCFEC1D00C1EF92 /* SiriWaveformView.swift */; };
 		EEF8E0011CB6FA3C0091317B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF8DFFF1CB6FA3C0091317B /* Main.storyboard */; };
 		FD1489B717F4A769A962D10C /* Pods_EMILYlingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1876B29EC9C27F86E3CF2BD2 /* Pods_EMILYlingo.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		EE2FA05E1CBEF22300710594 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EE2FA05F1CBEF22300710594 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		EE2FA0601CBEF22300710594 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		EEB9C0EC1CCFEC1D00C1EF92 /* SiriWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriWaveformView.swift; sourceTree = "<group>"; };
 		EEF8E0001CB6FA3C0091317B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				5FBB236F1CADD3DB00F59715 /* ViewController.swift */,
 				5F9EE9351CB3782F00D1A925 /* PhrasesViewController.swift */,
 				EE2FA05A1CBEE18B00710594 /* LeftViewController.swift */,
+				EEB9C0EC1CCFEC1D00C1EF92 /* SiriWaveformView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				5F9EE9331CB376B000D1A925 /* PhrasesCell.swift in Sources */,
 				EE2FA0621CBEF22300710594 /* UITableViewExtension.swift in Sources */,
 				EE2FA05B1CBEE18B00710594 /* LeftViewController.swift in Sources */,
+				EEB9C0ED1CCFEC1D00C1EF92 /* SiriWaveformView.swift in Sources */,
 				5FBB236E1CADD3DB00F59715 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

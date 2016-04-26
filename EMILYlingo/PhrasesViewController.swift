@@ -134,10 +134,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         self.setNavigationBarItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func sliderMenu(sender: AnyObject) {
         self.slideMenuController()?.openRight()
@@ -339,6 +335,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             //self.tableView.reloadData()
 
         }
+        self.tableView.reloadData()
         editView.hidden = true
     
     }

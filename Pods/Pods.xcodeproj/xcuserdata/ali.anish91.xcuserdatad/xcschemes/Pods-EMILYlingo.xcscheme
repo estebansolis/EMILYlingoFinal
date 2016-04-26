@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C66002FB5D7441D013C33C9C'
+               BlueprintIdentifier = '7FB73C26A55523A2305325F3'
                BlueprintName = 'Pods-EMILYlingo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_EMILYlingo.framework'>
