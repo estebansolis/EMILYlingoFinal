@@ -308,6 +308,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         TimerLabel.hidden = false
         RecordButton.enabled = true
         navigationHam.enabled = true
+        self.view.endEditing(true)
     }
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
@@ -383,6 +384,13 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         
         }
         
+    }
+    
+    func showErrorAlert(title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     
