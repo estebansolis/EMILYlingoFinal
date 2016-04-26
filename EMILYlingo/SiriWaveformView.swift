@@ -37,6 +37,18 @@ class SiriWaveformView: UIView {
         setNeedsDisplay()
     }
 
+    func reset(){
+        _phase = 0.0
+        _amplitude = 0.0
+        setNeedsDisplay()
+    }
+    
+    func resetSpeed(){
+        idleAmplitude = 0.01
+        frequency = 1.5
+        density = 5
+        phaseShift = -0.15
+    }
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         CGContextClearRect(context, bounds)

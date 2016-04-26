@@ -69,7 +69,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tap.cancelsTouchesInView = false
         navigationController!.navigationBar.barTintColor = UIColor(red:  240/255.0, green: 128/255.0, blue: 128/255.0, alpha: 100.0/100.0)
         editView.hidden = true
-        //volumeSlider.frame = CGRect(x: 9, y: 36, width: 305, height: 1)
         self.volumeSlider.setThumbImage(UIImage(named: "slider"), forState: UIControlState.Normal)
         searchPhraseBar.delegate = self
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -89,23 +88,14 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.sectionHeaderHeight = 0
         
-//        dictionary["phraseName"] = "Sit Down"
-//        dictionary["language"] = "Arabic"
-//        dictionary["time"] = "5"
-//        dictionary["flag"] = "usflag"
-//        dictionary["gender"] = "male"
-//        phrases.append(Phrases(dictionary: dictionary)!)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadData", name: mySpecialNotificationKey, object: nil)
 
        
         loadPhrases()
-        //sorting()
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -122,13 +112,10 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             if(sort == "By Date"){
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "MM:dd:hh:mm"
-              //  let date = dateFormatter.dateFromString()
                 phrases.sortInPlace({dateFormatter.dateFromString($0.currentDate!)!.compare(dateFormatter.dateFromString($1.currentDate!)!) == .OrderedDescending })
-               // tableView.reloadData();
             }
             if(sort == "Alphabetically"){
                 phrases.sortInPlace({ $0.phraseName < $1.phraseName })
-               // tableView.reloadData();
             }
         }
     }
@@ -143,7 +130,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         self.slideMenuController()?.openRight()
     }
     func loadPhrases(){
-        // query realm and add it to our phrase array to view 
         let ph = realm.objects(Phrases)
         
         phrases = Array(ph)
@@ -165,19 +151,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             sorting()
             cell.phrase = phrases[indexPath.row]
         }
-        
-        //let defaults = NSUserDefaults.standardUserDefaults()
-        /*if let sort = defaults.stringForKey("Sorting"){
-            if(sort == "By Date"){
-                phrases = phrases.reverse()
-//                tableView.reloadData();
-            }
-            if(sort == "Alphabetically"){
-                phrases.sortInPlace({ $1.phraseName > $0.phraseName })
-                //tableView.reloadData();
-            }
-        }*/
-        //cell.phrase = phrases[indexPath.row]
         return cell
     }
     
@@ -194,12 +167,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
         do {
             phraseLabel.text = label
-//            duration = Int((sound?.duration)!)
-//            if Int((sound?.duration)!) > 10 {
-//                totalDuration.text = "0:"+duration
-//            }else{
-//                totalDuration.text = "0:0"+duration
-//            }
             selectedCell.contentView.backgroundColor = UIColor(red:  232/255.0, green: 161/255.0, blue: 161/255.0, alpha: 100.0/100.0)
             totalDuration.text = duration
             sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
@@ -316,9 +283,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
 
     @IBAction func saveActionButton(sender: AnyObject) {
-        //if(self.nameEditField.text != nil){
-            self.Name = self.nameEditField.text
-        //}
+        self.Name = self.nameEditField.text
         self.Name = self.nameEditField.text
         self.language = self.languageEditField.text
         switch self.genderEditSegment.selectedSegmentIndex
@@ -340,12 +305,9 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                    thePhrase!.language = self.language
                    thePhrase!.gender = self.gender
                 }
-            //self.tableView.reloadData()
-
         }
         self.tableView.reloadData()
         editView.hidden = true
-    
     }
     
     @IBAction func forwardAction(sender: AnyObject) {
@@ -360,18 +322,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
                 do {
                     phraseLabel.text = label
-                    //            duration = Int((sound?.duration)!)
-                    //            if Int((sound?.duration)!) > 10 {
-                    //                totalDuration.text = "0:"+duration
-                    //            }else{
-                    //                totalDuration.text = "0:0"+duration
-                    //            }
                     totalDuration.text = duration
                     sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
                     audioPlayer = sound
                     sound!.play()
                     NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
-                    // sound.pause()
                     
                 } catch let error as NSError {
                     print(error)
@@ -391,8 +346,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 print ("this is index \(index)")
                 let cell = phrases[index-1]
                 index = index-1
-                //let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPathToInt)!
-                //selectedCell.contentView.backgroundColor = UIColor(red:  245/255.0, green: 183/255.0, blue: 177/255.0, alpha: 100.0/100.0)
                 let toAppendString = cell.url!
                 let label = cell.phraseName!
                 let duration = cell.time!
@@ -400,18 +353,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
                 do {
                     phraseLabel.text = label
-                    //            duration = Int((sound?.duration)!)
-                    //            if Int((sound?.duration)!) > 10 {
-                    //                totalDuration.text = "0:"+duration
-                    //            }else{
-                    //                totalDuration.text = "0:0"+duration
-                    //            }
                     totalDuration.text = duration
                     sound = try AVAudioPlayer(contentsOfURL: soundFileURL)
                     audioPlayer = sound
                     sound!.play()
                     NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(PhrasesViewController.updateAudioProgressView), userInfo: nil, repeats: true)
-                    // sound.pause()
                     
                 } catch let error as NSError {
                     print(error)
@@ -420,13 +366,4 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

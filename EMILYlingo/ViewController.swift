@@ -9,9 +9,8 @@
 import UIKit
 import RealmSwift
 import AVFoundation
-//import EZAudio
 
-class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate{ // EZMicrophoneDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate{
     
     //------------------------------------------------------------------------------
     // MARK: Properties
@@ -20,8 +19,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     
     @IBOutlet weak var navigationHam: UIBarButtonItem!
     @IBOutlet weak var waveformView: SiriWaveformView!
-    //@IBOutlet var plot: EZAudioPlotGL!
-    //var microphone: EZMicrophone!;
     @IBOutlet weak var RecordButton: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
@@ -107,11 +104,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         cancelButton.hidden = true
         saveButton.hidden = true
         saveView.hidden = true
-    
-//        microphone = EZMicrophone(delegate: self, startsImmediately: true)
-//        plot?.backgroundColor = UIColor.blackColor()
-//        let plotTypes: EZPlotType = EZPlotType.Buffer
-//        plot?.plotType = plotTypes
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -147,9 +139,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         if count == 1 {
             check = true
             if let image = UIImage(named: "recordingOn.png") {
-//                plot?.shouldFill = true
-//                plot?.shouldMirror = true
-//                plot?.resumeDrawing()
                 navigationHam.enabled = false
                 TimerControl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
                 count = 2
@@ -158,7 +147,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "recordOff.png") {
-                //plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -191,21 +179,15 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             audioPlayer = sound
             sound.play()
             RecordButton.enabled = false
-            //isRecording = false
-            //plot?.resumeDrawing()
         }catch{
             
         }
-//        plot?.shouldMirror = false
-//        plot?.shouldFill = false
-//        plot?.clear()
         
     }
     
     func startRecording(){
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0]
-        //let audioFilename = documentsDirectory.stringByAppendingString("recording.m4a")
         let randomURL = "/"+String.random()
         let audioFilename = documentsDirectory.stringByAppendingString(randomURL + ".m4a")
         audioURL = NSURL(fileURLWithPath: audioFilename)
@@ -226,10 +208,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             audioRecorder.meteringEnabled = true
             let displayLink = CADisplayLink(target: self, selector: #selector(ViewController.updateMeters))
             displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
-         //   let plotType: EZPlotType = EZPlotType.Buffer
-          //  plot?.plotType = plotType;
-          //  plot?.shouldFill = true
-          //  plot?.shouldMirror = true
             
         }catch {
             finishRecording()
@@ -252,14 +230,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         saveButton.hidden = true
         cancelButton.hidden = true
         saveView.hidden = false
-       
-    /*  var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        plot.addSubview(blurEffectView)*/
-        
-        
     }
     @IBAction func discardButton(sender: AnyObject) {
         navigationHam.enabled = true
@@ -272,9 +242,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             let sound = try AVAudioPlayer(contentsOfURL: audioURL)
             audioPlayer = sound
             sound.stop()
-            //plot?.clear()
-           // plot?.redraw()
-            //plot?.pauseDrawing()
         }
         catch{
             
@@ -282,23 +249,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         
     }
     @IBAction func saveButton(sender: AnyObject) {
-      
-//        dictionary["phraseName"] = nameField.text
-//        dictionary["language"] = languageField.text
-//        dictionary["time"] = String(30 - timer)
-//       
-//        dictionary["flag"] = languageField.text
-//        switch genderField.selectedSegmentIndex
-//        {
-//        case 0:
-//            dictionary["gender"] = "male"
-//        case 1:
-//            dictionary["gender"] = "female"
-//        default:
-//            break;
-//        }
-//        let audioFileName = audioURL.absoluteString
-//        dictionary["url"] = audioFileName
         
     }
     
@@ -326,7 +276,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             }
         }else {
             if let image = UIImage(named: "RecordOff.png") {
-                //plot?.pauseDrawing()
                 count = 1
                 tempTimer = timer
                 timer = 30
@@ -337,7 +286,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                     finishRecording()
                 }
             }
-
         }
     }
     
@@ -345,7 +293,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         if segue.identifier == "segueIdentifer"{
             let date = NSDate()
             let datesFormatter = NSDateFormatter()
-           // datesFormatter.dateFormat = "M:dd:hh:mm"
             datesFormatter.dateFormat = "MM:dd:hh:mm"
             saveView.hidden = true
             RecordButton.hidden = false
@@ -375,7 +322,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 var phrase: Phrases!
                 phrase = Phrases(dictionary: dictionary)
                 destination.phrase = phrase
-                //destination.dictionary = dictionary
                 try! realm.write {
                     realm.add(phrase)
                 }
@@ -392,23 +338,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
     }
-    
-    
-    //------------------------------------------------------------------------------
-    // MARK: Actions
-    //------------------------------------------------------------------------------
-    
-    
-    //------------------------------------------------------------------------------
-    // MARK: EZMicrophoneDelegate
-    //------------------------------------------------------------------------------
-    
-//    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-//       dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
-//        });
-//    }
-    
 }
 
 extension String {
