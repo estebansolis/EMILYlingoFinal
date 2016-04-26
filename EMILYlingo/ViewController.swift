@@ -9,9 +9,9 @@
 import UIKit
 import RealmSwift
 import AVFoundation
-import EZAudio
+//import EZAudio
 
-class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate , EZMicrophoneDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate{ // EZMicrophoneDelegate {
     
     //------------------------------------------------------------------------------
     // MARK: Properties
@@ -73,6 +73,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         super.viewDidLoad()
         navigationController!.navigationBar.barTintColor = UIColor(red:  0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 100.0/100.0)
         waveformView.waveColor = UIColor.whiteColor()
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let language = defaults.stringForKey("Language"){
@@ -170,7 +173,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     }
     
     func finishRecording(){
-        //isRecording = false
+        isRecording = false
         audioRecorder.meteringEnabled = false
         audioRecorder.stop()
         navigationHam.enabled = false
@@ -209,7 +212,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000.0,
             AVNumberOfChannelsKey: 1 as NSNumber,
-            AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.Max.rawValue
         ]
         
         do {

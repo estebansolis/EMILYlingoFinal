@@ -19,6 +19,7 @@
 		5FBB23911CADD3DC00F59715 /* EMILYlingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB23901CADD3DC00F59715 /* EMILYlingoUITests.swift */; };
 		5FD706CE1CC6DEA0004D9FFF /* recordingOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD706CD1CC6DEA0004D9FFF /* recordingOn.png */; };
 		5FD706D01CC6DEAD004D9FFF /* recordOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD706CF1CC6DEAD004D9FFF /* recordOff.png */; };
+		5FDAFCE51CD0082D007F9FBB /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAFCE41CD0082D007F9FBB /* MaterialView.swift */; };
 		EE2FA05B1CBEE18B00710594 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05A1CBEE18B00710594 /* LeftViewController.swift */; };
 		EE2FA0611CBEF22300710594 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05E1CBEF22300710594 /* StringExtension.swift */; };
 		EE2FA0621CBEF22300710594 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FA05F1CBEF22300710594 /* UITableViewExtension.swift */; };
@@ -67,6 +68,7 @@
 		5FBB9A6A1CADDCA200673D84 /* EMILYlingo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMILYlingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		5FD706CD1CC6DEA0004D9FFF /* recordingOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingOn.png; path = Assets.xcassets/recordingOn.imageset/recordingOn.png; sourceTree = "<group>"; };
 		5FD706CF1CC6DEAD004D9FFF /* recordOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordOff.png; path = Assets.xcassets/recordOff.imageset/recordOff.png; sourceTree = "<group>"; };
+		5FDAFCE41CD0082D007F9FBB /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		AB3020E61C59B24E2A80E79E /* Pods-EMILYlingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMILYlingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMILYlingo/Pods-EMILYlingo.release.xcconfig"; sourceTree = "<group>"; };
 		EE2FA05A1CBEE18B00710594 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		EE2FA05E1CBEF22300710594 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				EEF8DFFF1CB6FA3C0091317B /* Main.storyboard */,
 				5FBB23791CADD3DC00F59715 /* LaunchScreen.storyboard */,
 				5F9EE9321CB376B000D1A925 /* PhrasesCell.swift */,
+				5FDAFCE41CD0082D007F9FBB /* MaterialView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				5F9EE9391CB37A8200D1A925 /* Phrases.swift in Sources */,
 				5FBB23761CADD3DB00F59715 /* EMILYlingo.xcdatamodeld in Sources */,
 				EE2FA0631CBEF22300710594 /* UIViewControllerExtension.swift in Sources */,
+				5FDAFCE51CD0082D007F9FBB /* MaterialView.swift in Sources */,
 				5FBB23701CADD3DB00F59715 /* ViewController.swift in Sources */,
 				5F9EE9361CB3782F00D1A925 /* PhrasesViewController.swift in Sources */,
 				EE2FA0611CBEF22300710594 /* StringExtension.swift in Sources */,
