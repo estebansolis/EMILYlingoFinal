@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 
             }
         }
-        
+        self.slideMenuController()?.removeLeftGestures()
         cancelButton.hidden = true
         saveButton.hidden = true
         saveView.hidden = true
