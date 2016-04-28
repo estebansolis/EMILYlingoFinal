@@ -192,9 +192,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             let cell = self.phrases[row]
             self.editUrl = cell.url!
             self.editView.hidden = false
-      
-     
-
+            
     })
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             let row = indexPath.row
@@ -207,7 +205,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             
         })
     
-        return [editAction,deleteAction]
+        editAction.backgroundColor = UIColor.grayColor()
+        return [deleteAction,editAction]
     }
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
