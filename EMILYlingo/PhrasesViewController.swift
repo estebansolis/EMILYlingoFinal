@@ -277,12 +277,13 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBAction func cancelActionButton(sender: AnyObject) {
         editView.hidden = true
+        self.nameEditField.text = ""
+        self.languageEditField.text = ""
         self.view.endEditing(true)
     }
     
 
     @IBAction func saveActionButton(sender: AnyObject) {
-        self.Name = self.nameEditField.text
         self.Name = self.nameEditField.text
         self.language = self.languageEditField.text
         switch self.genderEditSegment.selectedSegmentIndex
@@ -295,7 +296,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             break;
         }
         let url = editUrl!
-        dispatch_async(dispatch_queue_create("background", nil)) {
+        dispatch_async(dispatch_get_main_queue()) {
             let realm = try! Realm()
             let predicate = NSPredicate(format: "url BEGINSWITH %@", url)
             let thePhrase = realm.objects(Phrases).filter(predicate).first
@@ -306,6 +307,8 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
         }
         self.tableView.reloadData()
+        self.nameEditField.text = ""
+        self.languageEditField.text = ""
         editView.hidden = true
     }
     

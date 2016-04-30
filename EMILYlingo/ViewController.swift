@@ -253,6 +253,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     }
     
     @IBAction func cancelButton(sender: AnyObject) {
+        languageField.text = ""
+        nameField.text = ""
         saveView.hidden = true
         RecordButton.hidden = false
         TimerLabel.hidden = false
@@ -294,6 +296,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             let date = NSDate()
             let datesFormatter = NSDateFormatter()
             datesFormatter.dateFormat = "MM:dd:hh:mm"
+            languageField.text = ""
+            nameField.text = ""
             saveView.hidden = true
             RecordButton.hidden = false
             TimerLabel.hidden = false
