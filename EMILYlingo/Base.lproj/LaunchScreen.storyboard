@@ -16,12 +16,34 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Landing 2-2" translatesAutoresizingMaskIntoConstraints="NO" id="tga-5I-sF5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Pj-zV-gdX"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="FT6-ro-XHy"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="tga-5I-sF5" secondAttribute="bottom" id="G6j-dX-mzn"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MlI-Mn-FrH"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Set-8M-bbg"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="XKf-p4-Sl3"/>
+                            <constraint firstAttribute="trailing" secondItem="tga-5I-sF5" secondAttribute="trailing" id="XwV-4w-ctr"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="tga-5I-sF5" secondAttribute="bottom" id="ZGj-bV-zby"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jTZ-60-Ea6"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jud-6s-1fa"/>
+                            <constraint firstItem="tga-5I-sF5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mp4-rK-s6o"/>
+                            <constraint firstAttribute="trailing" secondItem="tga-5I-sF5" secondAttribute="trailing" id="qYM-71-ehu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="374"/>
+            <point key="canvasLocation" x="-40" y="379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Landing 2-2" width="375" height="667"/>
+    </resources>
 </document>
