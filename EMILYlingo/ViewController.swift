@@ -296,8 +296,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
             let date = NSDate()
             let datesFormatter = NSDateFormatter()
             datesFormatter.dateFormat = "MM:dd:hh:mm"
-            languageField.text = ""
-            nameField.text = ""
             saveView.hidden = true
             RecordButton.hidden = false
             TimerLabel.hidden = false
@@ -330,7 +328,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                     realm.add(phrase)
                 }
             }
-           
+            languageField.text = ""
+            nameField.text = ""
         
         }
         
