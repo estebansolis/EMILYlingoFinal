@@ -11,7 +11,7 @@ import RealmSwift
 import AVFoundation
 import SlideMenuControllerSwift
 
-class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class PhrasesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var phrases = [Phrases]()
     @IBOutlet weak var tableView: UITableView!
@@ -58,11 +58,16 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     var editUrl: String?
     let mySpecialNotificationKey = "changeData"
     
+    var languages = ["English", "Greek", "Arabic"]
+    var picker = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-        
+        picker.delegate = self
+        picker.dataSource = self
+        languageEditField.inputView = picker
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker)
         
@@ -76,7 +81,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             if(language == "English"){
                searchPhraseBar.placeholder = "Search"
             }
-            if(language == "Turkish"){
+            if(language == "Arabic"){
                 searchPhraseBar.placeholder = "Arama"
                 
             }
@@ -94,6 +99,27 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         loadPhrases()
         tableView.reloadData()
     }
+    
+    // returns the number of 'columns' to display.
+    
+    internal func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    
+    internal func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return languages.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        languageEditField.text = languages[row]
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return languages[row]
+    }
+    
+
 
     func dismissKeyboard() {
         view.endEditing(true)

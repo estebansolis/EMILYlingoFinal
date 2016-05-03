@@ -50,7 +50,7 @@ class LeftViewController: UIViewController {
     
 
     @IBAction func changeSpanish(sender: AnyObject) {
-        defaults.setObject("Turkish", forKey: "Language")
+        defaults.setObject("Arabic", forKey: "Language")
         NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }

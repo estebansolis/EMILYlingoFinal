@@ -34,7 +34,7 @@ class PhrasesCell: UITableViewCell {
                 value += "🇺🇸"
             }
             if(phrase.language == "Arabic" || phrase.language == "arabic"){
-                value += "🇹🇷"
+                value += "🇸🇾"
             }
             
             emojiLabel.text = value

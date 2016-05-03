@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import AVFoundation
 
-class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate{
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
     //------------------------------------------------------------------------------
     // MARK: Properties
@@ -54,6 +54,9 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
     var dictionary: [String:String] = [
         "zero" : "zero"
     ]
+    var languages = ["English", "Greek", "Arabic"]
+    var picker = UIPickerView()
+    
     //------------------------------------------------------------------------------
     // MARK: Status Bar Style
     //------------------------------------------------------------------------------
@@ -70,7 +73,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         super.viewDidLoad()
         navigationController!.navigationBar.barTintColor = UIColor(red:  0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 100.0/100.0)
         waveformView.waveColor = UIColor.whiteColor()
-        
+        picker.delegate = self
+        picker.dataSource = self
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker)
         
@@ -84,7 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
                 genderLabel.text = "Gender:"
                 
             }
-            if(language == "Turkish"){
+            if(language == "Arabic"){
                 savePhraseButton.setTitle("Kaydet", forState: .Normal)
                 cancelPhraseButton.setTitle("Iptal", forState: .Normal)
                 nameLabel.text = "Isim:"
@@ -125,7 +129,26 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         }catch {
             
         }
+        languageField.inputView = picker
         
+    }
+    // returns the number of 'columns' to display.
+    
+    internal func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    
+    internal func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return languages.count
+    }
+
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        languageField.text = languages[row]
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return languages[row]
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
