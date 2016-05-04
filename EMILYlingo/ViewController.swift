@@ -261,6 +261,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDele
         RecordButton.hidden = false
         TimerLabel.hidden = false
         RecordButton.enabled = true
+        waveformView.reset()
         do{
             let sound = try AVAudioPlayer(contentsOfURL: audioURL)
             audioPlayer = sound
