@@ -320,9 +320,9 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         switch self.genderEditSegment.selectedSegmentIndex
         {
         case 0:
-            self.gender = "male"
+            self.gender = "👱"
         case 1:
-            self.gender = "female"
+            self.gender = "👩"
         default:
             break;
         }
