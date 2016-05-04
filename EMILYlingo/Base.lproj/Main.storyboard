@@ -203,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-fz-5LW" id="99r-kd-5cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-gB-Vbd">
@@ -610,15 +610,6 @@
                                     <color key="titleColor" red="0.12998512776291787" green="0.23607989784396036" blue="0.30769388089005234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG9-r2-Zfv">
-                                <rect key="frame" x="46" y="302" width="230" height="44"/>
-                                <state key="normal" title="By Date">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sortByDate:" destination="Q8X-AO-kMY" eventType="touchUpInside" id="bgJ-fO-IZL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33090114593505859" green="0.53629201650619507" blue="0.63222473859786987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -629,7 +620,6 @@
                     <connections>
                         <outlet property="alphabeticallyButton" destination="BmR-KS-Gm9" id="sAt-fu-o5Q"/>
                         <outlet property="arabicButton" destination="zn4-y7-gl7" id="J2J-wI-nbr"/>
-                        <outlet property="byDateButton" destination="lG9-r2-Zfv" id="nUw-qp-3ym"/>
                         <outlet property="englishButton" destination="273-tb-c6C" id="IHd-I9-tlm"/>
                         <outlet property="spanishButton" destination="Jte-FJ-bJH" id="TmK-fS-veO"/>
                     </connections>

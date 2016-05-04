@@ -60,13 +60,6 @@ class LeftViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
         self.slideMenuController()?.closeLeft()
     }
-
-    
-    @IBAction func sortByDate(sender: AnyObject) {
-        defaults.setObject("By Date", forKey: "Sorting")
-        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
-        self.slideMenuController()?.closeLeft()
-    }
     
     @IBAction func sortAlphabetically(sender: AnyObject) {
         defaults.setObject("Alphabetically", forKey: "Sorting")

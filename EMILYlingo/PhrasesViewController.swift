@@ -27,7 +27,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var searchActive : Bool = false
     var filtered:[Phrases] = []
-
     
     @IBOutlet weak var searchPhraseBar: UISearchBar!
     @IBOutlet weak var phraseLabel: UILabel!
@@ -135,11 +134,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     func sorting(){
         let defaults = NSUserDefaults.standardUserDefaults()
         if let sort = defaults.stringForKey("Sorting"){
-            if(sort == "By Date"){
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "MM:dd:hh:mm"
-                phrases.sortInPlace({dateFormatter.dateFromString($0.currentDate!)!.compare(dateFormatter.dateFromString($1.currentDate!)!) == .OrderedDescending })
-            }
             if(sort == "Alphabetically"){
                 phrases.sortInPlace({ $0.phraseName < $1.phraseName })
             }
@@ -203,7 +197,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
             let image = UIImage(named: "pause-button.png")
             playPauseButton.setImage(image, forState: .Normal)
             count = 1
-            
         } catch let error as NSError {
             print(error)
         }
@@ -286,9 +279,15 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func updateAudioProgressView(){
         if ((audioPlayer?.playing) != nil) {
-            if (Int((sound?.currentTime)!)) < 10 {
+            if(((Int((sound?.currentTime)!)) < 10) && (CGFloat((sound?.currentTime)!)) > 0){
+                let image = UIImage(named: "pause-button.png")
+                playPauseButton.setImage(image, forState: .Normal)
                 currentTimer.text = "0:0"+String(Int((sound?.currentTime)!))
-            }else {
+            }else if(sound?.currentTime == 0){
+                let image = UIImage(named: "play-button.png")
+                playPauseButton.setImage(image, forState: .Normal)
+            }
+            else {
                 currentTimer.text = "0:"+String(Int((sound?.currentTime)!))
             }
             progress.setProgress(Float((sound?.currentTime)!/(sound?.duration)!), animated: true)
@@ -348,6 +347,7 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 let duration = cell.time!
                 let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
                 soundFileURL = documentsDirectory.URLByAppendingPathComponent(toAppendString)
+                
                 do {
                     phraseLabel.text = label
                     totalDuration.text = duration
@@ -360,7 +360,6 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                     print(error)
                 }
             }
-
         }
     }
     
