@@ -287,9 +287,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
                 playPauseButton.setImage(image, forState: .Normal)
                 currentTimer.text = "0:0"+String(Int((sound?.currentTime)!))
                 }
+                
             }else if(sound?.currentTime == 0){
                 let image = UIImage(named: "play-button.png")
                 playPauseButton.setImage(image, forState: .Normal)
+                currentTimer.text = "0:0"+String(Int((sound?.currentTime)!))
             }
             else {
                 currentTimer.text = "0:"+String(Int((sound?.currentTime)!))
