@@ -260,10 +260,12 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
         if(count == 1){
             if((sound?.play()) != nil)
             {
+                if(CGFloat((sound?.currentTime)!) > 0){
                 count = 2
                 let image = UIImage(named: "play-button.png")
                 sound!.pause()
                 playPauseButton.setImage(image, forState: .Normal)
+                }
             }
         }
         else{
@@ -280,9 +282,11 @@ class PhrasesViewController: UIViewController, UITableViewDataSource, UITableVie
     func updateAudioProgressView(){
         if ((audioPlayer?.playing) != nil) {
             if(((Int((sound?.currentTime)!)) < 10) && (CGFloat((sound?.currentTime)!)) > 0){
+                if(count == 1){
                 let image = UIImage(named: "pause-button.png")
                 playPauseButton.setImage(image, forState: .Normal)
                 currentTimer.text = "0:0"+String(Int((sound?.currentTime)!))
+                }
             }else if(sound?.currentTime == 0){
                 let image = UIImage(named: "play-button.png")
                 playPauseButton.setImage(image, forState: .Normal)

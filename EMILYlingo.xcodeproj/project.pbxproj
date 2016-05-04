@@ -299,7 +299,7 @@
 				TargetAttributes = {
 					5FBB23691CADD3DB00F59715 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2Y5276U3HZ;
+						DevelopmentTeam = U5773CT6MK;
 					};
 					5FBB23801CADD3DC00F59715 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -576,6 +576,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./EMILYlingo/EMILYlingo-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -593,6 +594,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./EMILYlingo/EMILYlingo-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
